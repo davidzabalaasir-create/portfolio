@@ -5,216 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV | David</title>
     <style>
-      :root {
-        --bg: #f3f5f3;
-        --paper: #ffffff;
-        --line: #dfe7df;
-        --ink: #1c2329;
-        --muted: #58656d;
-        --accent: #2d4b45;
-        --accent-soft: #eef3ef;
+      /* Dark, portfolio-consistent CV with an obvious back button */
+      :root{
+        --bg:#08101d;
+        --paper:#0c1726;
+        --panel:#0f2230;
+        --line:rgba(151,176,186,0.08);
+        --text:#e5eee7;
+        --muted:#98b1b6;
+        --lime:#d2ff52;
+        --cyan:#62d9df;
       }
-      * { box-sizing: border-box; }
-      html, body {
-        margin: 0;
-        min-height: 100%;
-        background: var(--bg);
-        color: var(--ink);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+      @media print{
+        :root{ --bg: #fff; --paper: #fff; --text:#111; --muted:#444; }
       }
-      body {
-        background: linear-gradient(180deg, #f1f4f1 0%, #ebefec 100%);
+
+      *{box-sizing:border-box}
+      html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter, 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
+
+      .cv-shell{
+        width:min(900px,calc(100% - 32px));
+        margin:32px auto;
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border-radius:12px;
+        padding:28px;
+        border:1px solid var(--line);
+        box-shadow:0 20px 48px rgba(0,0,0,0.6);
+        background-color:var(--paper);
       }
-      @page {
-        size: A4;
-        margin: 12mm;
+
+      .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+      .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
+      .brand-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(180deg,var(--lime),#fff3a9);display:inline-flex;align-items:center;justify-content:center;color:#08101d;font-weight:700}
+      .brand-title{color:var(--text)}
+
+      .back-link{color:var(--text);background:transparent;padding:8px 12px;border-radius:10px;border:1px solid var(--line);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+      .back-link:hover{box-shadow:0 6px 20px rgba(0,0,0,0.5);transform:translateY(-2px)}
+
+      .hero{display:grid;grid-template-columns:1.6fr .9fr;gap:28px;align-items:end;padding:24px 0;border-bottom:1px solid var(--line)}
+      h1{margin:0;font-size:clamp(1.9rem,4vw,3.2rem);line-height:0.96}
+      .subtitle{margin-top:10px;color:var(--muted);font-size:1rem}
+
+      .contact-box{border-left:1px solid var(--line);padding-left:18px;color:var(--muted);font-size:0.95rem}
+      .contact-box div{margin-bottom:8px}
+
+      .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px 30px;margin-top:26px}
+      .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:10px;padding:18px;border:1px solid var(--line)}
+
+      .section-block{margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+      .section-title{color:var(--cyan);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;margin-bottom:12px;font-weight:700}
+
+      .timeline{display:flex;flex-direction:column;gap:12px}
+      .timeline-item{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+      .timeline-date{color:var(--muted);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em}
+      .timeline-item strong{display:block;color:var(--text);margin-bottom:6px;font-size:1.02rem}
+      .timeline-item p{margin:0;color:var(--muted);line-height:1.6}
+
+      .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+      .tag-cloud span{background:rgba(98,217,223,0.06);border:1px solid rgba(98,217,223,0.12);color:var(--text);padding:6px 8px;border-radius:999px;font-size:0.84rem}
+
+      ul{margin:0;padding-left:20px}
+
+      /* Floating obvious back button */
+      .back-fab{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:999px;background:linear-gradient(180deg,var(--lime),#fff3a9);display:inline-flex;align-items:center;justify-content:center;color:#08101d;font-weight:700;border:1px solid rgba(0,0,0,0.06);box-shadow:0 14px 36px rgba(0,0,0,0.6);text-decoration:none}
+      .back-fab:focus,.back-fab:hover{transform:translateY(-3px);box-shadow:0 28px 56px rgba(0,0,0,0.7)}
+      .back-fab .icon{font-size:1.1rem}
+
+      @media print{.back-fab,.back-link{display:none}.cv-shell{box-shadow:none;border:none;margin:0;padding:12mm}}
+
+      @media(max-width:760px){
+        .cv-shell{margin:18px;padding:18px}
+        .hero{display:block}
+        .contact-box{border-left:none;padding-left:0;margin-top:14px}
+        .grid{grid-template-columns:1fr}
       }
-      .cv-shell {
-        width: min(820px, calc(100% - 28px));
-        min-height: 1123px;
-        margin: 28px auto;
-        padding: 30px 34px 26px;
-        background: var(--paper);
-        border: 1px solid var(--line);
-        box-shadow: 0 10px 24px rgba(28, 35, 41, 0.06);
-      }
-      .topbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-        padding-bottom: 14px;
-        border-bottom: 1px solid var(--line);
-      }
-      .brand {
-        font-size: .86rem;
-        letter-spacing: .15em;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 700;
-      }
-      .muted { color: var(--muted); }
-      .back-link {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 600;
-      }
-      .hero {
-        display: grid;
-        grid-template-columns: 1.7fr .9fr;
-        gap: 26px;
-        align-items: end;
-        padding: 24px 0 18px;
-        border-bottom: 1px solid var(--line);
-      }
-      h1 {
-        margin: 0;
-        font-size: clamp(2.3rem, 3.7vw, 3.4rem);
-        letter-spacing: -0.06em;
-        line-height: 0.96;
-        color: var(--ink);
-      }
-      .subtitle {
-        margin: 12px 0 0;
-        font-size: 1rem;
-        color: var(--muted);
-      }
-      .contact-box {
-        border-left: 1px solid var(--line);
-        padding-left: 18px;
-        color: var(--muted);
-      }
-      .contact-box div {
-        margin-bottom: 8px;
-        font-size: .9rem;
-      }
-      h2 {
-        margin: 0 0 10px;
-        color: var(--accent);
-        font-size: .76rem;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-      }
-      p, li { color: var(--muted); line-height: 1.65; }
-      .grid {
-        display: grid;
-        grid-template-columns: 1.1fr .9fr;
-        gap: 24px 30px;
-        margin-top: 26px;
-      }
-      .card {
-        border: 1px solid var(--line);
-        padding: 18px 20px;
-        background: #fff;
-      }
-      .section-block {
-        margin-top: 28px;
-        border-top: 1px solid var(--line);
-        padding-top: 18px;
-      }
-      .section-title {
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: .12em;
-        font-size: .72rem;
-        margin-bottom: 16px;
-        font-weight: 700;
-      }
-      .timeline {
-        display: grid;
-        gap: 16px;
-      }
-      .timeline-item {
-        display: grid;
-        grid-template-columns: 150px 1fr;
-        gap: 18px;
-        padding: 14px 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .timeline-date {
-        color: var(--muted);
-        font-size: .73rem;
-        text-transform: uppercase;
-        letter-spacing: .06em;
-      }
-      .timeline-item strong {
-        display: block;
-        color: var(--ink);
-        margin-bottom: 6px;
-        font-size: 1.04rem;
-      }
-      .tag-cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 8px;
-      }
-      .tag-cloud span {
-        border: 1px solid var(--line);
-        background: var(--accent-soft);
-        color: var(--accent);
-        padding: 6px 8px;
-        font-size: .74rem;
-      }
-      ul { margin: 0; padding-left: 18px; }
-      @media (max-width: 700px) {
-        .cv-shell { margin: 20px 12px; padding: 18px 18px 24px; width: calc(100% - 24px); }
-        .topbar, .grid, .hero { grid-template-columns: 1fr; display: block; }
-        .topbar { display: flex; flex-wrap: wrap; }
-        .contact-box { border-left: none; padding-left: 0; margin-top: 18px; }
-        .timeline-item { grid-template-columns: 1fr; gap: 8px; }
-      }
-      @media print {
-        body { background: #fff; }
-        .cv-shell {
-          width: 100%;
-          min-height: auto;
-          margin: 0;
-          border: none;
-          box-shadow: none;
-          padding: 0;
-        }
-        .back-link { display: none; }
-      }
+
+      @page{size:A4;margin:12mm}
     </style>
   </head>
   <body>
-    <div class="cv-shell">
+    <div class="cv-shell" role="document">
       <div class="topbar">
-        <div class="brand">David</div>
-        <a class="back-link" href="../index.html">← volver al portfolio</a>
+        <div class="brand"><span class="brand-mark">DV</span><div class="brand-title">DAVID</div></div>
+        <a class="back-link" href="/" aria-label="Volver al portfolio">← Volver al portfolio</a>
       </div>
 
       <div class="hero">
         <div>
-          <h1>Administrador de Sistemas<br />Informáticos en Red</h1>
-          <p class="subtitle">Especializado en infra, redes, virtualización y automatización.</p>
+          <h1>Administrador de Sistemas<br/>Informáticos en Red</h1>
+          <div class="subtitle">Especializado en infra, redes, virtualización y automatización — construyo soluciones observables y reproducibles.</div>
         </div>
-        <div class="contact-box">
-          <div>Email: davidzamaira2003@gmail.com</div>
-          <div>Bilbao, España</div>
-          <div>ASIR · 2025 — Actualidad</div>
-        </div>
+
+        <aside class="contact-box" aria-label="Contacto">
+          <div><strong class="muted">Email</strong>: <span class="muted">davidzamaira2003@gmail.com</span></div>
+          <div><strong class="muted">Ubicación</strong>: Bilbao, España</div>
+          <div><strong class="muted">Formación</strong>: ASIR — 2025 — actualidad</div>
+          <div style="margin-top:10px;"><a href="/" class="back-link" style="display:inline-block;">Abrir portfolio ↗</a></div>
+        </aside>
       </div>
 
       <div class="grid">
         <section class="card">
-          <h2>Perfil</h2>
-          <p>Me interesa construir infraestructuras estables, automatizar tareas repetitivas y documentar procesos con criterio técnico.</p>
-          <p>Me muevo en entornos Linux, redes, virtualización y monitorización, con enfoque en soluciones prácticas, seguras y fáciles de mantener.</p>
+          <h2 class="section-title">Perfil</h2>
+          <p>Me interesa construir infraestructuras estables, automatizar tareas repetitivas y documentar procesos con criterio técnico. Trabajo en entornos Linux con énfasis en redes, virtualización y monitorización.</p>
         </section>
 
         <section class="card">
-          <h2>Contacto</h2>
+          <h2 class="section-title">Contacto</h2>
           <ul>
-            <li>Email: davidzamaira2003@gmail.com</li>
-            <li>Localización: Bilbao, España</li>
-            <li>Perfil: ASIR</li>
+            <li><strong>Email</strong>: davidzamaira2003@gmail.com</li>
+            <li><strong>Localización</strong>: Bilbao, España</li>
+            <li><strong>Perfil</strong>: ASIR</li>
+            <li><strong>GitHub</strong>: <a href="https://github.com/davidzabalaasir-create" target="_blank" rel="noreferrer">github.com/davidzabalaasir-create</a></li>
           </ul>
         </section>
 
         <section class="card">
-          <h2>Formación</h2>
+          <h2 class="section-title">Formación</h2>
           <ul>
             <li>Administración de Sistemas Informáticos en Red (ASIR)</li>
             <li>SMR – Sistemas Microinformáticos y Redes</li>
@@ -222,7 +130,7 @@
         </section>
 
         <section class="card">
-          <h2>Stack</h2>
+          <h2 class="section-title">Stack</h2>
           <ul>
             <li>Linux / Windows Server</li>
             <li>Docker / Virtualización</li>
@@ -289,5 +197,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Floating, obvious back button for quick return to portfolio -->
+    <a class="back-fab" href="/" aria-label="Volver al portfolio">
+      <span class="icon">🏠</span>
+    </a>
   </body>
 </html>

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV | David</title>
+    <style>
+      :root {
+        --bg: #f3f5f3;
+        --paper: #ffffff;
+        --line: #dfe7df;
+        --ink: #1c2329;
+        --muted: #58656d;
+        --accent: #2d4b45;
+        --accent-soft: #eef3ef;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background: linear-gradient(180deg, #f1f4f1 0%, #ebefec 100%);
+      }
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+      .cv-shell {
+        width: min(820px, calc(100% - 28px));
+        min-height: 1123px;
+        margin: 28px auto;
+        padding: 30px 34px 26px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: 0 10px 24px rgba(28, 35, 41, 0.06);
+      }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        font-size: .86rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .muted { color: var(--muted); }
+      .back-link {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.7fr .9fr;
+        gap: 26px;
+        align-items: end;
+        padding: 24px 0 18px;
+        border-bottom: 1px solid var(--line);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(2.3rem, 3.7vw, 3.4rem);
+        letter-spacing: -0.06em;
+        line-height: 0.96;
+        color: var(--ink);
+      }
+      .subtitle {
+        margin: 12px 0 0;
+        font-size: 1rem;
+        color: var(--muted);
+      }
+      .contact-box {
+        border-left: 1px solid var(--line);
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .contact-box div {
+        margin-bottom: 8px;
+        font-size: .9rem;
+      }
+      h2 {
+        margin: 0 0 10px;
+        color: var(--accent);
+        font-size: .76rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      p, li { color: var(--muted); line-height: 1.65; }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 24px 30px;
+        margin-top: 26px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        padding: 18px 20px;
+        background: #fff;
+      }
+      .section-block {
+        margin-top: 28px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+      .section-title {
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        font-size: .72rem;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+      .timeline {
+        display: grid;
+        gap: 16px;
+      }
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 18px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .timeline-date {
+        color: var(--muted);
+        font-size: .73rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+      }
+      .timeline-item strong {
+        display: block;
+        color: var(--ink);
+        margin-bottom: 6px;
+        font-size: 1.04rem;
+      }
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .tag-cloud span {
+        border: 1px solid var(--line);
+        background: var(--accent-soft);
+        color: var(--accent);
+        padding: 6px 8px;
+        font-size: .74rem;
+      }
+      ul { margin: 0; padding-left: 18px; }
+      @media (max-width: 700px) {
+        .cv-shell { margin: 20px 12px; padding: 18px 18px 24px; width: calc(100% - 24px); }
+        .topbar, .grid, .hero { grid-template-columns: 1fr; display: block; }
+        .topbar { display: flex; flex-wrap: wrap; }
+        .contact-box { border-left: none; padding-left: 0; margin-top: 18px; }
+        .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      }
+      @media print {
+        body { background: #fff; }
+        .cv-shell {
+          width: 100%;
+          min-height: auto;
+          margin: 0;
+          border: none;
+          box-shadow: none;
+          padding: 0;
+        }
+        .back-link { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-shell">
+      <div class="topbar">
+        <div class="brand">David</div>
+        <a class="back-link" href="/">← volver al portfolio</a>
+      </div>
+
+      <div class="hero">
+        <div>
+          <h1>Administrador de Sistemas<br />Informáticos en Red</h1>
+          <p class="subtitle">Especializado en infra, redes, virtualización y automatización.</p>
+        </div>
+        <div class="contact-box">
+          <div>Email: davidzamaira2003@gmail.com</div>
+          <div>Bilbao, España</div>
+          <div>ASIR · 2025 — Actualidad</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Perfil</h2>
+          <p>Me interesa construir infraestructuras estables, automatizar tareas repetitivas y documentar procesos con criterio técnico.</p>
+          <p>Me muevo en entornos Linux, redes, virtualización y monitorización, con enfoque en soluciones prácticas, seguras y fáciles de mantener.</p>
+        </section>
+
+        <section class="card">
+          <h2>Contacto</h2>
+          <ul>
+            <li>Email: davidzamaira2003@gmail.com</li>
+            <li>Localización: Bilbao, España</li>
+            <li>Perfil: ASIR</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Formación</h2>
+          <ul>
+            <li>Administración de Sistemas Informáticos en Red (ASIR)</li>
+            <li>SMR – Sistemas Microinformáticos y Redes</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Stack</h2>
+          <ul>
+            <li>Linux / Windows Server</li>
+            <li>Docker / Virtualización</li>
+            <li>Redes TCP/IP / pfSense</li>
+            <li>Bash / Python / SQL</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Experiencia y proyectos</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2025 — ahora</div>
+            <div>
+              <strong>Laboratorios prácticos de red e infraestructura</strong>
+              <p>Diseño y despliegue de entornos virtualizados con VLANs, servicios internos, firewall y monitorización básica de red.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024 — 2025</div>
+            <div>
+              <strong>Automatización y administración de sistemas</strong>
+              <p>Implementación de tareas repetitivas con Bash y scripting para monitorizar, respaldar y mantener entornos de laboratorio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Proyectos destacados</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">NEXUS</div>
+            <div>
+              <strong>Monitorización de servicios</strong>
+              <p>Dashboard orientado a observabilidad, latencia y rendimiento de infraestructura híbrida.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">LAB LAN</div>
+            <div>
+              <strong>Red segmentada con seguridad y aislamiento</strong>
+              <p>Arquitectura de laboratorio con segmentación por VLAN, control de tráfico y servicios internos diferenciados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title">Habilidades</div>
+        <div class="tag-cloud">
+          <span>Linux</span>
+          <span>Windows Server</span>
+          <span>Docker</span>
+          <span>Virtualización</span>
+          <span>Redes TCP/IP</span>
+          <span>pfSense</span>
+          <span>Bash</span>
+          <span>Python</span>
+          <span>SQL</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

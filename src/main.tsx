@@ -12,7 +12,6 @@ type Project = {
 }
 
 type Theme = 'dark' | 'light'
-
 type Category = 'todos' | Project['category']
 
 const projects: Project[] = [
@@ -294,7 +293,13 @@ function App() {
 
             <div className="contact-links">
               {socialLinks.map((link) => (
-                <a key={link.label} className="contact-link" href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined}>
+                <a
+                  key={link.label}
+                  className="contact-link"
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                >
                   {link.label} <span>↗</span>
                 </a>
               ))}

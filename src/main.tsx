@@ -86,7 +86,15 @@ function App() {
     [filter],
   )
 
-  const cvUrl = `${import.meta.env.BASE_URL}cv.html`
+  const handleDownloadCV = () => {
+    const cvPath = `${import.meta.env.BASE_URL}CV_David_Zabala_Maira.pdf`
+    const link = document.createElement('a')
+    link.href = cvPath
+    link.download = 'CV_David_Zabala_Maira.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <div className="app-shell">
@@ -137,9 +145,9 @@ function App() {
               <a className="button button-primary" href="#proyectos">
                 ver proyectos <span>↗</span>
               </a>
-              <a className="button button-ghost" href={cvUrl} target="_blank" rel="noreferrer">
+              <button className="button button-ghost" onClick={handleDownloadCV} type="button">
                 descargar CV <span>↓</span>
-              </a>
+              </button>
             </div>
           </div>
 

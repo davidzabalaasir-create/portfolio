@@ -1,102 +1,140 @@
-# ASIR Lab Portfolio
+# ASIR Lab Portfolio — Seguridad y Operaciones
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80" alt="ASIR Lab Portfolio hero" width="100%" />
+  <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80" alt="ASIR Lab — Seguridad" width="100%" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite" alt="Vite" />
-  <img src="https://img.shields.io/badge/Portfolio-Personal-0A0F1E?style=for-the-badge" alt="Portfolio personal" />
+  <img src="https://img.shields.io/badge/ASIR-Security%20Focused-111827?style=for-the-badge&logo=shield" alt="ASIR Security" />
+  <img src="https://img.shields.io/badge/IDS-Suricata-FF3A3A?style=for-the-badge&logo=suricata" alt="Suricata" />
+  <img src="https://img.shields.io/badge/Monitoring-Nexus%20Monitor-00AEEF?style=for-the-badge" alt="Nexus Monitor" />
+  <img src="https://img.shields.io/badge/Labs-Homelab-2B2E33?style=for-the-badge" alt="Homelab" />
 </p>
 
-Portfolio personal orientado a la Administración de Sistemas Informáticos en Red (ASIR), enfocado en infraestructura, redes, automatización y seguridad. Este proyecto presenta mi perfil técnico, proyectos destacados y experiencia práctica en entornos de sistemas y redes.
+Este repositorio agrupa mi portafolio técnico orientado a Administración de Sistemas y Seguridad de Redes (ASIR). Incluye laboratorios reproducibles, detección de intrusiones, monitorización y prácticas de backup y recuperación — pensado para demostrar capacidades operacionales y de hardening.
 
-## Sobre mí
+## Resumen rápido
 
-Soy David, estudiante y apasionado de la administración de sistemas y redes. Me interesa construir entornos informáticos robustos, seguros y eficientes, desde la infraestructura básica hasta la automatización y la monitorización de servicios.
+- Nombre: David — Administrador de Sistemas & Security Ops
+- Enfoque: infraestructura segura, detección y respuesta, automatización de operaciones
+- Objetivo: mostrar proyectos prácticos, reproducibles y documentados para auditoría y formación
 
-Mi enfoque combina:
+## Perfil y enfoque en seguridad
 
-- Administración de sistemas Linux y Windows Server
-- Redes TCP/IP, VLANs y segmentación
-- Virtualización y despliegue de entornos
-- Monitorización y resolución de incidencias
-- Automatización con Bash y Python
-- Seguridad aplicada a redes y servicios
+Trabajo en la intersección entre operaciones y seguridad: diseño de redes segmentadas, hardening de servicios, monitorización continua y respuesta a incidentes.
 
-## Perfil técnico
+- Threat hunting y análisis de tráfico (PCAP)
+- Detección y prevención con Suricata
+- Observabilidad: métricas, logs y dashboards (Prometheus / Grafana / ELK / NEXUS)
+- Automatización de despliegues y backups seguros (scripts, Ansible, Docker)
+- Pruebas de contingencia: restauraciones y verificación de integridad
 
-<div align="center">
-  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Perfil técnico" width="80%" />
-</div>
-
-- Administración de sistemas y servicios
-- Gestión de redes y seguridad
-- Virtualización con VMware / VirtualBox
-- Monitorización y análisis de desempeño
-- Automatización de tareas operativas
-- Diagnóstico de incidencias y resolución eficiente
-
-## Proyectos destacados
-
-<table>
-  <tr>
-    <td width="50%">
-      <img src="https://images.unsplash.com/photo-1558494949cc1d7f94b5d7c6f2d8e7d44?auto=format&fit=crop&w=900&q=80" alt="NEXUS MONITOR" width="100%" />
-      <br />
-      <strong>NEXUS MONITOR</strong>
-      <br />
-      Dashboard de observabilidad para vigilar servicios, latencias y capacidad en una red híbrida.
-    </td>
-    <td width="50%">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="LABORATORIO LAN" width="100%" />
-      <br />
-      <strong>LABORATORIO LAN</strong>
-      <br />
-      Arquitectura segmentada con VLANs, firewall perimetral y servicios internos aislados por roles.
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=80" alt="BACKUP ZERO" width="100%" />
-      <br />
-      <strong>BACKUP ZERO</strong>
-      <br />
-      Estrategia 3-2-1 automatizada con snapshots, cifrado y restauraciones verificadas.
-    </td>
-    <td width="50%">
-      <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80" alt="SURICATA SHIELD" width="100%" />
-      <br />
-      <strong>SURICATA SHIELD</strong>
-      <br />
-      Sistema de detección y prevención de intrusiones para analizar tráfico y bloquear amenazas.
-    </td>
-  </tr>
-</table>
-
-## Stack tecnológico
+## Stack y herramientas destacadas
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux" alt="Linux" />
-  <img src="https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=microsoft" alt="Windows Server" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker" alt="Docker" />
-  <img src="https://img.shields.io/badge/Virtualization-6A5ACD?style=for-the-badge" alt="Virtualization" />
-  <img src="https://img.shields.io/badge/Redes-TCP%2FIP-1F6FEB?style=for-the-badge" alt="TCP/IP" />
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash" alt="Bash" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" alt="Python" />
-  <img src="https://img.shields.io/badge/SQL-4169E1?style=for-the-badge&logo=postgresql" alt="SQL" />
+  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker" />
+  <img src="https://img.shields.io/badge/Suricata-FF3A3A?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana" />
+  <img src="https://img.shields.io/badge/Prometheus-1E90FF?style=for-the-badge&logo=prometheus" />
+  <img src="https://img.shields.io/badge/ELK-4B0082?style=for-the-badge&logo=elastic" />
+  <img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" />
 </p>
 
-## Desarrollo
+## Proyectos y labs (destacados)
+
+### SURICATA SHIELD — Detección y prevención
+Imagen: <img src="https://images.unsplash.com/photo-1526378722616-3b0b6f6f2f6c?auto=format&fit=crop&w=900&q=80" alt="Suricata" width="100%" />
+
+Implementación de Suricata con reglas personalizadas, integración de alertas hacia un SIEM ligero y pipeline para análisis de PCAPs. Incluye:
+
+- Reglas personalizadas para IoC y anomalías
+- Procesamiento de logs y envío a ELK/Grafana
+- Playbooks de respuesta para falsos positivos y remediación rápida
+
+Dónde mirar: carpeta `labs/suricata` (reglas, docker-compose y scripts de ingestión).
+
+---
+
+### NEXUS MONITOR — Observabilidad aplicada
+Imagen: <img src="https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?auto=format&fit=crop&w=900&q=80" alt="Nexus Monitor" width="100%" />
+
+Panel integrado que reúne métricas, trazas y logs para identificar degradaciones y patrones de ataque (picos de conexiones, latencia, errores 500, spikes en logs).
+
+Incluye dashboards preconfigurados, alertas y ejemplos de playbooks (escalado, mitigación, post-mortem).
+
+---
+
+### LABORATORIO LAN — Segmentación y hardening
+Imagen: <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=900&q=80" alt="Laboratorio LAN" width="100%" />
+
+Topologías reproducibles con VLANs, firewall perimetral, y servicios aislados por rol. Documentación para pruebas de microsegmentación y MFA en servicios críticos.
+
+---
+
+### BACKUP ZERO — Estrategia y validación
+Imagen: <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80" alt="Backup Zero" width="100%" />
+
+Estrategia 3-2-1 con snapshots, cifrado en tránsito y en reposo, verificación automática de restauraciones y alertas ante fallos.
+
+Scripts y procedimientos en `labs/backup`.
+
+## Cómo reproducir los laboratorios (rápido)
+
+Requisitos: Docker y Docker Compose instalados. Linux recomendado.
+
+1. Clonar el repositorio
+
+   git clone https://github.com/davidzabalaasir-create/portfolio.git
+   cd portfolio
+
+2. Ir al lab que quieras y arrancarlo con docker-compose
+
+   cd labs/suricata
+   docker-compose up -d --build
+
+   cd ../nexus-monitor
+   docker-compose up -d
+
+3. Revisar dashboards:
+
+   - Grafana: http://localhost:3000
+   - ELK Kibana: http://localhost:5601
+   - Suricata Eve JSON logs en `logs/eve.json`
+
+4. Ejecutar un pcap de ejemplo para generar eventos (opcional)
+
+   ./scripts/play_pcap.sh sample.pcap
+
+Nota: los labs incluyen README propios con variables de entorno y opciones de despliegue.
+
+## Checklist de seguridad (rápido)
+
+- [ ] Actualizar reglas de Suricata periódicamente
+- [ ] Habilitar TLS para endpoints de ingestión de logs
+- [ ] Rotación de credenciales y secrets management (no almacenar en texto plano)
+- [ ] Verificación regular de backups y pruebas de RTO/RPO
+- [ ] Aplicar hardening en images base y escaneo de vulnerabilidades
+
+## Contribuciones y uso académico
+
+Este repositorio está pensado como portafolio y entorno educativo. Para colaborar, abre un issue o PR indicando:
+
+- Objetivo de la mejora
+- Lab afectado
+- Impacto en detección o infraestructura
+
+## Comandos de desarrollo
+
+Instala dependencias y arranca el frontend de portfolio:
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build de producción
+Build de producción:
 
 ```bash
 npm run build
@@ -105,12 +143,8 @@ npm run preview
 
 ## Contacto
 
-Si quieres colaborar, hablar sobre infraestructura, redes o proyectos de ciberseguridad, este es un buen punto de partida.
+Si quieres colaborar en labs, auditorías o prácticas de red, contáctame en GitHub: https://github.com/davidzabalaasir-create
 
-<p align="center">
-  <a href="https://github.com/davidzabalaasir-create" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" alt="GitHub" />
-  </a>
-</p>
+---
 
-> Edita los proyectos, habilidades y datos personales en `src/main.tsx`.
+> Edita los laboratorios y la información personal en `labs/` y `src/main.tsx`.

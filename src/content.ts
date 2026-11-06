@@ -17,7 +17,7 @@ export type Project = {
 }
 
 export const EMAIL = 'davidzamaira2003@gmail.com'
-export const LINKEDIN = 'https://www.linkedin.com/in/david-zabala'
+export const LINKEDIN = 'https://www.linkedin.com/in/david-zabala-66b655233'
 export const GITHUB = 'https://github.com/davidzabalaasir-create'
 
 export const projects: Project[] = [
@@ -205,7 +205,7 @@ export const content = {
           file: 'CV_David_Zabala_Maira.pdf',
           title: 'Currículum vitae',
           description: 'Formación, experiencia y competencias técnicas.',
-          meta: 'PDF · 175 KB · español',
+          meta: 'PDF · 178 KB · español',
         },
         {
           file: 'Carta_de_Motivacion_David_Zabala.pdf',
@@ -360,7 +360,7 @@ export const content = {
           file: 'CV_David_Zabala_Maira.pdf',
           title: 'Résumé (CV)',
           description: 'Education, experience and technical skills.',
-          meta: 'PDF · 175 KB · Spanish',
+          meta: 'PDF · 178 KB · Spanish',
         },
         {
           file: 'Carta_de_Motivacion_David_Zabala.pdf',

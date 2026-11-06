@@ -6,7 +6,7 @@
 
 <a href="https://davidzabalaasir-create.github.io/portfolio/"><img src="https://img.shields.io/badge/portfolio-online-d2ff52?style=for-the-badge&labelColor=08101d" alt="Portfolio online" /></a>
 <a href="https://davidzabalaasir-create.github.io/portfolio/CV_David_Zabala_Maira.pdf"><img src="https://img.shields.io/badge/CV-descargar-62d9df?style=for-the-badge&labelColor=08101d" alt="Descargar CV" /></a>
-<a href="https://www.linkedin.com/in/david-zabala"><img src="https://img.shields.io/badge/LinkedIn-perfil-e7f1ee?style=for-the-badge&labelColor=08101d" alt="LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/david-zabala-66b655233"><img src="https://img.shields.io/badge/LinkedIn-perfil-e7f1ee?style=for-the-badge&labelColor=08101d" alt="LinkedIn" /></a>
 <a href="https://github.com/davidzabalaasir-create/portfolio/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/davidzabalaasir-create/portfolio/deploy.yml?style=for-the-badge&label=deploy&labelColor=08101d" alt="Estado del despliegue" /></a>
 
 </div>
@@ -166,7 +166,7 @@ El contenido editable (proyectos, formación, experiencia, stack, contacto) vive
 **¿Construimos algo resistente?** Disponible para prácticas y proyectos.
 
 <a href="mailto:davidzamaira2003@gmail.com"><img src="https://img.shields.io/badge/davidzamaira2003@gmail.com-08101d?style=for-the-badge&logo=gmail&logoColor=d2ff52" alt="Email" /></a>
-<a href="https://www.linkedin.com/in/david-zabala"><img src="https://img.shields.io/badge/LinkedIn-08101d?style=for-the-badge&logo=linkedin&logoColor=62d9df" alt="LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/david-zabala-66b655233"><img src="https://img.shields.io/badge/LinkedIn-08101d?style=for-the-badge&logo=linkedin&logoColor=62d9df" alt="LinkedIn" /></a>
 <a href="https://github.com/davidzabalaasir-create"><img src="https://img.shields.io/badge/GitHub-08101d?style=for-the-badge&logo=github&logoColor=62d9df" alt="GitHub" /></a>
 
 <sub><code>exit 0</code> · construido con curiosidad + café</sub>

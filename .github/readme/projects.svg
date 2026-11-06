@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="560" viewBox="0 0 1220 560" role="img" aria-label="Proyectos de laboratorio: Nexus Monitor, Laboratorio LAN, Backup Zero y Suricata Shield">
+<style>.mono{font-family:'DM Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace}.sans{font-family:'Space Grotesk','Segoe UI',Helvetica,Arial,sans-serif}
+.dot{animation:p 1.8s ease-out infinite;transform-origin:center;transform-box:fill-box}@keyframes p{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}</style>
+<rect width="1220" height="560" rx="24" fill="#08101d"/>
+<g transform="translate(20 20)"><g>
+<rect width="580" height="250" rx="20" fill="#0d1623" stroke="#97b0ba" stroke-opacity=".22"/>
+<rect x="20" y="0" width="120" height="3" rx="1.5" fill="#d2ff52"/>
+<text x="28" y="44" class="mono" font-size="14" fill="#d2ff52">01</text>
+<text x="60" y="44" class="mono" font-size="12" fill="#9bb0b6">/ sistemas</text>
+<circle cx="472" cy="40" r="5" fill="#d2ff52"/>
+<circle cx="472" cy="40" r="5" fill="#d2ff52" class="dot"/>
+<text x="552" y="44" text-anchor="end" class="mono" font-size="12" fill="#9bb0b6">operativo</text>
+<g transform="translate(508 82)"><g fill="none" stroke="#62d9df" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 30 14 18l8 6 14-16"/><path d="M4 36h36"/></g></g>
+<text x="28" y="100" class="sans" font-size="30" font-weight="700" fill="#e7f1ee" letter-spacing="-1">NEXUS MONITOR</text>
+<text x="28" y="136" class="sans" font-size="16" fill="#9bb0b6">Dashboard de observabilidad para</text>
+<text x="28" y="158" class="sans" font-size="16" fill="#9bb0b6">servicios, latencias y capacidad.</text>
+<rect x="28" y="190" width="66" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="61.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">linux</text>
+<rect x="104" y="190" width="74" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="141.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">docker</text>
+<rect x="188" y="190" width="82" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="229.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">grafana</text>
+<text x="552" y="214" text-anchor="end" class="sans" font-size="22" fill="#d2ff52">↗</text></g></g>
+<g transform="translate(620 20)"><g>
+<rect width="580" height="250" rx="20" fill="#0d1623" stroke="#97b0ba" stroke-opacity=".22"/>
+<rect x="20" y="0" width="120" height="3" rx="1.5" fill="#d2ff52"/>
+<text x="28" y="44" class="mono" font-size="14" fill="#d2ff52">02</text>
+<text x="60" y="44" class="mono" font-size="12" fill="#9bb0b6">/ redes</text>
+<circle cx="472" cy="40" r="5" fill="#d2ff52"/>
+<circle cx="472" cy="40" r="5" fill="#d2ff52" class="dot"/>
+<text x="552" y="44" text-anchor="end" class="mono" font-size="12" fill="#9bb0b6">operativo</text>
+<g transform="translate(508 82)"><g fill="none" stroke="#62d9df" stroke-width="2.5"><rect x="15" y="2" width="14" height="10" rx="2"/><rect x="2" y="28" width="14" height="10" rx="2"/><rect x="28" y="28" width="14" height="10" rx="2"/><path d="M22 12v8M9 28v-8h26v8"/></g></g>
+<text x="28" y="100" class="sans" font-size="30" font-weight="700" fill="#e7f1ee" letter-spacing="-1">LABORATORIO LAN</text>
+<text x="28" y="136" class="sans" font-size="16" fill="#9bb0b6">Arquitectura segmentada con VLAN</text>
+<text x="28" y="158" class="sans" font-size="16" fill="#9bb0b6">y firewall perimetral por roles.</text>
+<rect x="28" y="190" width="82" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="69.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">pfsense</text>
+<rect x="120" y="190" width="58" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="149.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">vlan</text>
+<rect x="188" y="190" width="74" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="225.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">tcp/ip</text>
+<text x="552" y="214" text-anchor="end" class="sans" font-size="22" fill="#d2ff52">↗</text></g></g>
+<g transform="translate(20 290)"><g>
+<rect width="580" height="250" rx="20" fill="#0d1623" stroke="#97b0ba" stroke-opacity=".22"/>
+<rect x="20" y="0" width="120" height="3" rx="1.5" fill="#ffb547"/>
+<text x="28" y="44" class="mono" font-size="14" fill="#d2ff52">03</text>
+<text x="60" y="44" class="mono" font-size="12" fill="#9bb0b6">/ sistemas</text>
+<circle cx="450" cy="40" r="5" fill="#ffb547"/>
+<text x="552" y="44" text-anchor="end" class="mono" font-size="12" fill="#9bb0b6">en evolución</text>
+<g transform="translate(508 82)"><g fill="none" stroke="#62d9df" stroke-width="2.5"><ellipse cx="22" cy="8" rx="16" ry="6"/><path d="M6 8v24c0 3.3 7.2 6 16 6s16-2.7 16-6V8M6 20c0 3.3 7.2 6 16 6s16-2.7 16-6"/></g></g>
+<text x="28" y="100" class="sans" font-size="30" font-weight="700" fill="#e7f1ee" letter-spacing="-1">BACKUP ZERO</text>
+<text x="28" y="136" class="sans" font-size="16" fill="#9bb0b6">Estrategia 3-2-1 con snapshots,</text>
+<text x="28" y="158" class="sans" font-size="16" fill="#9bb0b6">cifrado y restauraciones verificadas.</text>
+<rect x="28" y="190" width="58" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="57.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">bash</text>
+<rect x="96" y="190" width="66" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="129.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">rsync</text>
+<rect x="172" y="190" width="106" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="225.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">virtualbox</text>
+<text x="552" y="214" text-anchor="end" class="sans" font-size="22" fill="#d2ff52">↗</text></g></g>
+<g transform="translate(620 290)"><g>
+<rect width="580" height="250" rx="20" fill="#0d1623" stroke="#97b0ba" stroke-opacity=".22"/>
+<rect x="20" y="0" width="120" height="3" rx="1.5" fill="#ffb547"/>
+<text x="28" y="44" class="mono" font-size="14" fill="#d2ff52">04</text>
+<text x="60" y="44" class="mono" font-size="12" fill="#9bb0b6">/ seguridad</text>
+<circle cx="450" cy="40" r="5" fill="#ffb547"/>
+<text x="552" y="44" text-anchor="end" class="mono" font-size="12" fill="#9bb0b6">en evolución</text>
+<g transform="translate(508 82)"><g fill="none" stroke="#62d9df" stroke-width="2.5" stroke-linejoin="round"><path d="M22 2 38 8v12c0 10-7 16-16 20C13 36 6 30 6 20V8Z"/><path d="m15 20 5 5 9-10" stroke-linecap="round"/></g></g>
+<text x="28" y="100" class="sans" font-size="30" font-weight="700" fill="#e7f1ee" letter-spacing="-1">SURICATA SHIELD</text>
+<text x="28" y="136" class="sans" font-size="16" fill="#9bb0b6">Detección de intrusiones para</text>
+<text x="28" y="158" class="sans" font-size="16" fill="#9bb0b6">analizar tráfico y responder.</text>
+<rect x="28" y="190" width="90" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="73.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">suricata</text>
+<rect x="128" y="190" width="66" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="161.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">linux</text>
+<rect x="204" y="190" width="58" height="30" rx="15" fill="#62d9df" fill-opacity=".06" stroke="#97b0ba" stroke-opacity=".3"/><text x="233.0" y="210" text-anchor="middle" class="mono" font-size="12" fill="#e7f1ee">logs</text>
+<text x="552" y="214" text-anchor="end" class="sans" font-size="22" fill="#d2ff52">↗</text></g></g>
+</svg>

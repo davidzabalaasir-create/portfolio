@@ -1,150 +1,130 @@
-# ASIR Lab Portfolio — Seguridad y Operaciones
+<div align="center">
 
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80" alt="ASIR Lab — Seguridad" width="100%" />
-</p>
+<img src=".github/readme/banner.svg" alt="David Zabala — Diseño sistemas que resisten" width="100%" />
 
-<p align="center">
-  <img src="https://img.shields.io/badge/ASIR-Security%20Focused-111827?style=for-the-badge&logo=shield" alt="ASIR Security" />
-  <img src="https://img.shields.io/badge/IDS-Suricata-FF3A3A?style=for-the-badge&logo=suricata" alt="Suricata" />
-  <img src="https://img.shields.io/badge/Monitoring-Nexus%20Monitor-00AEEF?style=for-the-badge" alt="Nexus Monitor" />
-  <img src="https://img.shields.io/badge/Labs-Homelab-2B2E33?style=for-the-badge" alt="Homelab" />
-</p>
+<br />
 
-Este repositorio agrupa mi portafolio técnico orientado a Administración de Sistemas y Seguridad de Redes (ASIR). Incluye laboratorios reproducibles, detección de intrusiones, monitorización y prácticas de backup y recuperación — pensado para demostrar capacidades operacionales y de hardening.
+<a href="https://davidzabalaasir-create.github.io/portfolio/"><img src="https://img.shields.io/badge/portfolio-online-d2ff52?style=for-the-badge&labelColor=08101d" alt="Portfolio online" /></a>
+<a href="https://davidzabalaasir-create.github.io/portfolio/CV_David_Zabala_Maira.pdf"><img src="https://img.shields.io/badge/CV-descargar-62d9df?style=for-the-badge&labelColor=08101d" alt="Descargar CV" /></a>
+<a href="mailto:davidzamaira2003@gmail.com"><img src="https://img.shields.io/badge/contacto-email-e7f1ee?style=for-the-badge&labelColor=08101d" alt="Email" /></a>
+<a href="https://github.com/davidzabalaasir-create/portfolio/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/davidzabalaasir-create/portfolio/deploy.yml?style=for-the-badge&label=deploy&labelColor=08101d" alt="Estado del despliegue" /></a>
 
-## Resumen rápido
+</div>
 
-- Nombre: David — Administrador de Sistemas & Security Ops
-- Enfoque: infraestructura segura, detección y respuesta, automatización de operaciones
-- Objetivo: mostrar proyectos prácticos, reproducibles y documentados para auditoría y formación
+```console
+david@asir-lab:~$ whoami
+David Zabala · estudiante de ASIR · Bilbao, ES
 
-## Perfil y enfoque en seguridad
+david@asir-lab:~$ cat ~/.motd
+Construyo infraestructuras claras, seguras y fáciles de mantener,
+desde la red hasta la automatización.
+```
 
-Trabajo en la intersección entre operaciones y seguridad: diseño de redes segmentadas, hardening de servicios, monitorización continua y respuesta a incidentes.
+## `01` · `traceroute ~/formación`
 
-- Threat hunting y análisis de tráfico (PCAP)
-- Detección y prevención con Suricata
-- Observabilidad: métricas, logs y dashboards (Prometheus / Grafana / ELK / NEXUS)
-- Automatización de despliegues y backups seguros (scripts, Ansible, Docker)
-- Pruebas de contingencia: restauraciones y verificación de integridad
+<img src=".github/readme/path.svg" alt="Itinerario formativo: SMR 2023–2025 y ASIR desde 2025" width="100%" />
 
-## Stack y herramientas destacadas
+| hop | periodo | ciclo | estado |
+| :-: | :-- | :-- | :-- |
+| `1` | 2023 — 2025 | **SMR** · Sistemas Microinformáticos y Redes · Mikeldi | ✅ completado |
+| `2` | 2025 — hoy | **ASIR** · Administración de Sistemas Informáticos en Red | 🟢 en curso |
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker" />
-  <img src="https://img.shields.io/badge/Suricata-FF3A3A?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana" />
-  <img src="https://img.shields.io/badge/Prometheus-1E90FF?style=for-the-badge&logo=prometheus" />
-  <img src="https://img.shields.io/badge/ELK-4B0082?style=for-the-badge&logo=elastic" />
-  <img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" />
-</p>
+## `02` · `ls -la ~/proyectos`
 
-## Proyectos y labs (destacados)
+<img src=".github/readme/projects.svg" alt="Proyectos: Nexus Monitor, Laboratorio LAN, Backup Zero y Suricata Shield" width="100%" />
 
-### SURICATA SHIELD — Detección y prevención
-Imagen: <img src="https://images.unsplash.com/photo-1526378722616-3b0b6f6f2f6c?auto=format&fit=crop&w=900&q=80" alt="Suricata" width="100%" />
+<details>
+<summary><b>📂 Ver detalles de cada laboratorio</b></summary>
 
-Implementación de Suricata con reglas personalizadas, integración de alertas hacia un SIEM ligero y pipeline para análisis de PCAPs. Incluye:
+<br />
 
-- Reglas personalizadas para IoC y anomalías
-- Procesamiento de logs y envío a ELK/Grafana
-- Playbooks de respuesta para falsos positivos y remediación rápida
+| proyecto | área | qué resuelve | estado |
+| :-- | :-- | :-- | :-- |
+| **NEXUS MONITOR** | sistemas | Vigilar servicios, latencias y capacidad en una red híbrida con dashboards. | 🟢 operativo |
+| **LABORATORIO LAN** | redes | Segmentar la red con VLAN, firewall perimetral y servicios aislados por rol. | 🟢 operativo |
+| **BACKUP ZERO** | sistemas | Copias 3-2-1 automatizadas con snapshots, cifrado y restauraciones verificadas. | 🟠 en evolución |
+| **SURICATA SHIELD** | seguridad | Detectar intrusiones analizando el tráfico y responder ante amenazas. | 🟠 en evolución |
 
-Dónde mirar: carpeta `labs/suricata` (reglas, docker-compose y scripts de ingestión).
+</details>
 
----
+## `03` · `nmap --topology ~/laboratorio-lan`
 
-### NEXUS MONITOR — Observabilidad aplicada
-Imagen: <img src="https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?auto=format&fit=crop&w=900&q=80" alt="Nexus Monitor" width="100%" />
+<img src=".github/readme/network.svg" alt="Topología del laboratorio: WAN, firewall pfSense, sensor Suricata y VLAN de administración, servidores y usuarios" width="100%" />
 
-Panel integrado que reúne métricas, trazas y logs para identificar degradaciones y patrones de ataque (picos de conexiones, latencia, errores 500, spikes en logs).
+<sub>Esquema del laboratorio de red: el tráfico entra por pfSense, Suricata lo inspecciona y cada VLAN queda aislada según su rol.</sub>
 
-Incluye dashboards preconfigurados, alertas y ejemplos de playbooks (escalado, mitigación, post-mortem).
+## `04` · `apt list --installed`
 
----
+<table>
+  <tr>
+    <td valign="top" width="33%">
 
-### LABORATORIO LAN — Segmentación y hardening
-Imagen: <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=900&q=80" alt="Laboratorio LAN" width="100%" />
+**`~/sistemas`**
 
-Topologías reproducibles con VLANs, firewall perimetral, y servicios aislados por rol. Documentación para pruebas de microsegmentación y MFA en servicios críticos.
+<img src="https://img.shields.io/badge/Linux-08101d?style=flat-square&logo=linux&logoColor=d2ff52" alt="Linux" />
+<img src="https://img.shields.io/badge/Windows%20Server-08101d?style=flat-square&logo=windows&logoColor=62d9df" alt="Windows Server" />
+<img src="https://img.shields.io/badge/Docker-08101d?style=flat-square&logo=docker&logoColor=62d9df" alt="Docker" />
+<img src="https://img.shields.io/badge/VirtualBox-08101d?style=flat-square&logo=virtualbox&logoColor=62d9df" alt="VirtualBox" />
 
----
+</td>
+    <td valign="top" width="33%">
 
-### BACKUP ZERO — Estrategia y validación
-Imagen: <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80" alt="Backup Zero" width="100%" />
+**`~/redes & seguridad`**
 
-Estrategia 3-2-1 con snapshots, cifrado en tránsito y en reposo, verificación automática de restauraciones y alertas ante fallos.
+<img src="https://img.shields.io/badge/TCP%2FIP-08101d?style=flat-square&logo=cisco&logoColor=d2ff52" alt="TCP/IP" />
+<img src="https://img.shields.io/badge/pfSense-08101d?style=flat-square&logo=pfsense&logoColor=62d9df" alt="pfSense" />
+<img src="https://img.shields.io/badge/VLAN-08101d?style=flat-square&logo=ubiquiti&logoColor=62d9df" alt="VLAN" />
+<img src="https://img.shields.io/badge/Suricata-08101d?style=flat-square&logo=suricata&logoColor=ff6b6b" alt="Suricata" />
 
-Scripts y procedimientos en `labs/backup`.
+</td>
+    <td valign="top" width="33%">
 
-## Cómo reproducir los laboratorios (rápido)
+**`~/automatización`**
 
-Requisitos: Docker y Docker Compose instalados. Linux recomendado.
+<img src="https://img.shields.io/badge/Bash-08101d?style=flat-square&logo=gnubash&logoColor=d2ff52" alt="Bash" />
+<img src="https://img.shields.io/badge/Python-08101d?style=flat-square&logo=python&logoColor=62d9df" alt="Python" />
+<img src="https://img.shields.io/badge/SQL-08101d?style=flat-square&logo=mysql&logoColor=62d9df" alt="SQL" />
+<img src="https://img.shields.io/badge/Git-08101d?style=flat-square&logo=git&logoColor=62d9df" alt="Git" />
 
-1. Clonar el repositorio
+</td>
+  </tr>
+</table>
 
-   git clone https://github.com/davidzabalaasir-create/portfolio.git
-   cd portfolio
+## `05` · `systemctl status portfolio`
 
-2. Ir al lab que quieras y arrancarlo con docker-compose
+```diff
+● portfolio.service - Portfolio personal (React + TypeScript + Vite)
+     Loaded: loaded (src/main.tsx; enabled)
++    Active: active (running) en GitHub Pages
+     Docs:   CV y carta de motivación descargables en la sección «documentos»
+```
 
-   cd labs/suricata
-   docker-compose up -d --build
+<details>
+<summary><b>🛠️ Arrancarlo en local</b></summary>
 
-   cd ../nexus-monitor
-   docker-compose up -d
-
-3. Revisar dashboards:
-
-   - Grafana: http://localhost:3000
-   - ELK Kibana: http://localhost:5601
-   - Suricata Eve JSON logs en `logs/eve.json`
-
-4. Ejecutar un pcap de ejemplo para generar eventos (opcional)
-
-   ./scripts/play_pcap.sh sample.pcap
-
-Nota: los labs incluyen README propios con variables de entorno y opciones de despliegue.
-
-## Checklist de seguridad (rápido)
-
-- [ ] Actualizar reglas de Suricata periódicamente
-- [ ] Habilitar TLS para endpoints de ingestión de logs
-- [ ] Rotación de credenciales y secrets management (no almacenar en texto plano)
-- [ ] Verificación regular de backups y pruebas de RTO/RPO
-- [ ] Aplicar hardening en images base y escaneo de vulnerabilidades
-
-## Contribuciones y uso académico
-
-Este repositorio está pensado como portafolio y entorno educativo. Para colaborar, abre un issue o PR indicando:
-
-- Objetivo de la mejora
-- Lab afectado
-- Impacto en detección o infraestructura
-
-## Comandos de desarrollo
-
-Instala dependencias y arranca el frontend de portfolio:
+<br />
 
 ```bash
+git clone https://github.com/davidzabalaasir-create/portfolio.git
+cd portfolio
 npm install
-npm run dev
+npm run dev      # servidor de desarrollo
+npm run build    # build de producción en dist/
 ```
 
-Build de producción:
+El contenido editable (proyectos, formación, stack, contacto) vive en `src/main.tsx`; los estilos en `src/styles.css`. Cada push a `main` se publica automáticamente en GitHub Pages.
 
-```bash
-npm run build
-npm run preview
-```
+</details>
 
-## Contacto
+## `06` · `ssh david@contacto`
 
-Si quieres colaborar en labs, auditorías o prácticas de red, contáctame en GitHub: https://github.com/davidzabalaasir-create
+<div align="center">
 
----
+**¿Construimos algo resistente?** Disponible para prácticas y proyectos.
 
-> Edita los laboratorios y la información personal en `labs/` y `src/main.tsx`.
+<a href="mailto:davidzamaira2003@gmail.com"><img src="https://img.shields.io/badge/davidzamaira2003@gmail.com-08101d?style=for-the-badge&logo=gmail&logoColor=d2ff52" alt="Email" /></a>
+<a href="https://github.com/davidzabalaasir-create"><img src="https://img.shields.io/badge/GitHub-08101d?style=for-the-badge&logo=github&logoColor=62d9df" alt="GitHub" /></a>
+
+<sub><code>exit 0</code> · construido con curiosidad + café</sub>
+
+</div>

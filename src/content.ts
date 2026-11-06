@@ -205,7 +205,7 @@ export const content = {
           file: 'CV_David_Zabala_Maira.pdf',
           title: 'Currículum vitae',
           description: 'Formación, experiencia y competencias técnicas.',
-          meta: 'PDF · 124 KB · español',
+          meta: 'PDF · 175 KB · español',
         },
         {
           file: 'Carta_de_Motivacion_David_Zabala.pdf',
@@ -360,7 +360,7 @@ export const content = {
           file: 'CV_David_Zabala_Maira.pdf',
           title: 'Résumé (CV)',
           description: 'Education, experience and technical skills.',
-          meta: 'PDF · 124 KB · Spanish',
+          meta: 'PDF · 175 KB · Spanish',
         },
         {
           file: 'Carta_de_Motivacion_David_Zabala.pdf',

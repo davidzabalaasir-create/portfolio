@@ -76,6 +76,8 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 
 </details>
 
+🛡️ **aiSOC** — demo interactiva en la web: una consola SOC simulada sobre la red de los laboratorios, con alertas en directo y un analista IA que las explica, las relaciona con MITRE ATT&CK y ejecuta la respuesta. [Probar la demo →](https://davidzabalaasir-create.github.io/portfolio/#aisoc)
+
 📘 **[Manual de laboratorios](docs/laboratorios/README.md)** — configuración paso a paso de cada proyecto y las capturas que documentan el resultado.
 
 ## `04` · `nmap --topology ~/laboratorio-lan`

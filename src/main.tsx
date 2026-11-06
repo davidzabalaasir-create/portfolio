@@ -1,11 +1,13 @@
 import { StrictMode, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { AiSoc } from './AiSoc'
+import { aisocText } from './aisoc-data'
 import { content, EMAIL, GITHUB, LINKEDIN, projects, type FilterId, type Lang } from './content'
 import './styles.css'
 
 type Theme = 'dark' | 'light'
 
-const sectionIds = ['perfil', 'formacion', 'experiencia', 'proyectos', 'stack', 'documentos', 'contacto'] as const
+const sectionIds = ['perfil', 'formacion', 'experiencia', 'proyectos', 'aisoc', 'stack', 'documentos', 'contacto'] as const
 const filters: FilterId[] = ['todos', 'redes', 'sistemas', 'seguridad']
 const base = import.meta.env.BASE_URL
 
@@ -383,8 +385,20 @@ function App() {
           </div>
         </section>
 
+        <section className="aisoc-section section-grid" id="aisoc">
+          <div className="section-label"><span>06</span><span>{aisocText[lang].label}</span></div>
+
+          <div className="aisoc-content reveal">
+            <p className="kicker">{aisocText[lang].kicker}</p>
+            <SectionTitle lines={aisocText[lang].title} />
+            <p className="aisoc-intro">{aisocText[lang].intro}</p>
+            <p className="aisoc-disclaimer"><span aria-hidden="true">ⓘ</span> {aisocText[lang].disclaimer}</p>
+            <AiSoc lang={lang} />
+          </div>
+        </section>
+
         <section className="stack section-grid" id="stack">
-          <div className="section-label"><span>06</span><span>{t.stack.label}</span></div>
+          <div className="section-label"><span>07</span><span>{t.stack.label}</span></div>
 
           <div className="stack-content reveal">
             <p className="kicker">{t.stack.kicker}</p>
@@ -406,7 +420,7 @@ function App() {
         </section>
 
         <section className="documents section-grid" id="documentos">
-          <div className="section-label"><span>07</span><span>{t.documents.label}</span></div>
+          <div className="section-label"><span>08</span><span>{t.documents.label}</span></div>
 
           <div className="documents-content reveal">
             <p className="kicker">{t.documents.kicker}</p>
@@ -429,7 +443,7 @@ function App() {
         </section>
 
         <section className="contact section-grid" id="contacto">
-          <div className="section-label"><span>08</span><span>{t.contact.label}</span></div>
+          <div className="section-label"><span>09</span><span>{t.contact.label}</span></div>
 
           <div className="contact-content reveal">
             <p className="kicker">{t.contact.kicker}</p>

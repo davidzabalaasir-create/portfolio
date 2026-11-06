@@ -60,10 +60,26 @@ const navItems = [
   { id: 'formacion', label: 'formación' },
   { id: 'proyectos', label: 'proyectos' },
   { id: 'stack', label: 'stack' },
+  { id: 'documentos', label: 'documentos' },
   { id: 'contacto', label: 'contacto' },
 ]
 
 const EMAIL = 'davidzamaira2003@gmail.com'
+
+const documents = [
+  {
+    file: 'CV_David_Zabala_Maira.pdf',
+    title: 'Currículum vitae',
+    description: 'Formación, experiencia y competencias técnicas.',
+    meta: 'PDF · 66 KB',
+  },
+  {
+    file: 'Carta_de_Motivacion_David_Zabala.pdf',
+    title: 'Carta de motivación',
+    description: 'Presentación personal e intereses profesionales.',
+    meta: 'PDF · 19 KB · inglés',
+  },
+]
 const categories: Category[] = ['todos', 'redes', 'sistemas', 'seguridad']
 
 const education = [
@@ -396,8 +412,36 @@ function App() {
           </div>
         </section>
 
+        <section className="documents section-grid" id="documentos">
+          <div className="section-label"><span>06</span><span>documentos</span></div>
+
+          <div className="documents-content reveal">
+            <p className="kicker">/ descargas</p>
+            <h2>Todo en<br /><em>un archivo.</em></h2>
+
+            <div className="document-list">
+              {documents.map((doc) => (
+                <a
+                  key={doc.file}
+                  className="document-card"
+                  href={`${import.meta.env.BASE_URL}${doc.file}`}
+                  download={doc.file}
+                >
+                  <span className="document-icon" aria-hidden="true">PDF</span>
+                  <span className="document-info">
+                    <strong>{doc.title}</strong>
+                    <span>{doc.description}</span>
+                    <small>{doc.meta}</small>
+                  </span>
+                  <span className="document-action">descargar <b aria-hidden="true">↓</b></span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="contact section-grid" id="contacto">
-          <div className="section-label"><span>06</span><span>contacto</span></div>
+          <div className="section-label"><span>07</span><span>contacto</span></div>
 
           <div className="contact-content reveal">
             <p className="kicker">/ abre una conexión</p>

@@ -312,6 +312,7 @@ footer {
 .education h2,
 .projects h2,
 .stack h2,
+.documents h2,
 .contact h2 {
   margin: 0;
   font-size: clamp(2.8rem, 5vw, 5.25rem);
@@ -325,6 +326,7 @@ footer {
 .education h2 em,
 .projects h2 em,
 .stack h2 em,
+.documents h2 em,
 .contact h2 em {
   color: var(--lime);
   font-style: normal;
@@ -583,6 +585,7 @@ footer {
 
 .profile-content,
 .education-content,
+.documents-content,
 .projects-content,
 .stack-content,
 .contact-content {
@@ -931,6 +934,98 @@ footer {
   border-color: rgba(210, 255, 82, 0.25);
 }
 
+.document-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 2.2rem;
+}
+
+.document-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  padding: 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.document-card:hover,
+.document-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(210, 255, 82, 0.4);
+  box-shadow: 0 0 0 6px var(--focus);
+}
+
+.document-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 64px;
+  border: 1px solid rgba(98, 217, 223, 0.35);
+  border-radius: 8px 18px 8px 8px;
+  background: var(--soft-cyan);
+  color: var(--cyan);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.document-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.document-info strong {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.document-info span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.document-info small {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.document-action {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--lime);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+:root[data-theme='light'] .document-action {
+  color: #5f8a00;
+}
+
+.document-action b {
+  font-weight: 400;
+  transition: transform 180ms ease;
+}
+
+.document-card:hover .document-action b {
+  transform: translateY(3px);
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -1094,7 +1189,8 @@ footer b {
     grid-template-columns: 1fr;
   }
 
-  .skill-groups {
+  .skill-groups,
+  .document-list {
     grid-template-columns: 1fr;
   }
 }

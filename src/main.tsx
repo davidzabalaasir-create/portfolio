@@ -1,113 +1,47 @@
 import { StrictMode, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { content, EMAIL, GITHUB, LINKEDIN, projects, type FilterId, type Lang } from './content'
 import './styles.css'
 
-type Project = {
-  title: string
-  description: string
-  category: 'redes' | 'sistemas' | 'seguridad'
-  status: 'operativo' | 'en evolución'
-  stack: string[]
-  number: string
+type Theme = 'dark' | 'light'
+
+const sectionIds = ['perfil', 'formacion', 'experiencia', 'proyectos', 'stack', 'documentos', 'contacto'] as const
+const filters: FilterId[] = ['todos', 'redes', 'sistemas', 'seguridad']
+const base = import.meta.env.BASE_URL
+
+function readStored<T extends string>(key: string, allowed: readonly T[], fallback: T): T {
+  if (typeof window === 'undefined') return fallback
+  const saved = localStorage.getItem(key)
+  return allowed.includes(saved as T) ? (saved as T) : fallback
 }
 
-type Theme = 'dark' | 'light'
-type Category = 'todos' | Project['category']
+function initialLang(): Lang {
+  const fromUrl = new URLSearchParams(window.location.search).get('lang')
+  if (fromUrl === 'es' || fromUrl === 'en') return fromUrl
+  const stored = localStorage.getItem('portfolio-lang')
+  if (stored === 'es' || stored === 'en') return stored
+  return navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en'
+}
 
-const projects: Project[] = [
-  {
-    title: 'NEXUS MONITOR',
-    description: 'Dashboard de observabilidad para vigilar servicios, latencias y capacidad en una red híbrida.',
-    category: 'sistemas',
-    status: 'operativo',
-    stack: ['Linux', 'Docker', 'Grafana'],
-    number: '01',
-  },
-  {
-    title: 'LABORATORIO LAN',
-    description: 'Arquitectura segmentada con VLAN, firewall perimetral y servicios internos aislados por roles.',
-    category: 'redes',
-    status: 'operativo',
-    stack: ['pfSense', 'VLAN', 'TCP/IP'],
-    number: '02',
-  },
-  {
-    title: 'BACKUP ZERO',
-    description: 'Estrategia 3-2-1 automatizada con snapshots, cifrado y restauraciones verificadas.',
-    category: 'sistemas',
-    status: 'en evolución',
-    stack: ['Bash', 'Rsync', 'VirtualBox'],
-    number: '03',
-  },
-  {
-    title: 'SURICATA SHIELD',
-    description: 'Sistema de detección de intrusiones para analizar tráfico y responder ante amenazas de red.',
-    category: 'seguridad',
-    status: 'en evolución',
-    stack: ['Suricata', 'Linux', 'Logs'],
-    number: '04',
-  },
-]
-
-const skillGroups = [
-  { title: 'sistemas', items: ['Linux', 'Windows Server', 'Docker', 'Virtualización'] },
-  { title: 'redes & seguridad', items: ['Redes TCP/IP', 'pfSense', 'VLAN', 'Suricata'] },
-  { title: 'automatización', items: ['Bash', 'Python', 'SQL', 'Git'] },
-]
-
-const navItems = [
-  { id: 'perfil', label: 'perfil' },
-  { id: 'formacion', label: 'formación' },
-  { id: 'proyectos', label: 'proyectos' },
-  { id: 'stack', label: 'stack' },
-  { id: 'documentos', label: 'documentos' },
-  { id: 'contacto', label: 'contacto' },
-]
-
-const EMAIL = 'davidzamaira2003@gmail.com'
-
-const documents = [
-  {
-    file: 'CV_David_Zabala_Maira.pdf',
-    title: 'Currículum vitae',
-    description: 'Formación, experiencia y competencias técnicas.',
-    meta: 'PDF · 66 KB',
-  },
-  {
-    file: 'Carta_de_Motivacion_David_Zabala.pdf',
-    title: 'Carta de motivación',
-    description: 'Presentación personal e intereses profesionales.',
-    meta: 'PDF · 19 KB · inglés',
-  },
-]
-const categories: Category[] = ['todos', 'redes', 'sistemas', 'seguridad']
-
-const education = [
-  { period: '2025 — actualidad', title: 'Administración de Sistemas Informáticos en Red', subtitle: 'ASIR' },
-  { period: '2023 — 2025', title: 'Sistemas Microinformáticos y Redes', subtitle: 'SMR' },
-]
-
-const stats = [
-  { value: '03', label: 'áreas de foco' },
-  { value: '24/7', label: 'mentalidad operativa' },
-  { value: '∞', label: 'curiosidad técnica' },
-]
-
-const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com/davidzabalaasir-create' },
-]
+function SectionTitle({ lines }: { lines: string[] }) {
+  return (
+    <h2>
+      {lines[0]}
+      <br />
+      <em>{lines[1]}</em>
+    </h2>
+  )
+}
 
 function App() {
-  const [filter, setFilter] = useState<Category>('todos')
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'dark'
-    const saved = localStorage.getItem('portfolio-theme') as Theme | null
-    return saved ?? 'dark'
-  })
-
+  const [filter, setFilter] = useState<FilterId>('todos')
+  const [theme, setTheme] = useState<Theme>(() => readStored('portfolio-theme', ['dark', 'light'], 'dark'))
+  const [lang, setLang] = useState<Lang>(initialLang)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const [copied, setCopied] = useState(false)
+
+  const t = content[lang]
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -115,12 +49,15 @@ function App() {
     localStorage.setItem('portfolio-theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    document.documentElement.lang = lang
+    document.title = t.meta.title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', t.meta.description)
+    localStorage.setItem('portfolio-lang', lang)
+  }, [lang, t])
+
   // Resalta en la navegación la sección visible
   useEffect(() => {
-    const sections = navItems
-      .map((item) => document.getElementById(item.id))
-      .filter((el): el is HTMLElement => el !== null)
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -130,13 +67,15 @@ function App() {
       { rootMargin: '-45% 0px -50% 0px' },
     )
 
-    sections.forEach((section) => observer.observe(section))
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
     return () => observer.disconnect()
   }, [])
 
   // Animación de entrada al hacer scroll
   useEffect(() => {
-    const elements = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -149,7 +88,7 @@ function App() {
       { threshold: 0.12 },
     )
 
-    elements.forEach((el) => observer.observe(el))
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
@@ -176,31 +115,35 @@ function App() {
     [filter],
   )
 
-  const cvPath = `${import.meta.env.BASE_URL}CV_David_Zabala_Maira.pdf`
+  const cv = t.documents.items[0]
+  const socialLinks = [
+    { label: 'LinkedIn', href: LINKEDIN },
+    { label: 'GitHub', href: GITHUB },
+  ]
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#perfil">
+        {lang === 'es' ? 'saltar al contenido' : 'skip to content'}
+      </a>
+
       <header className="topbar">
-        <a className="brand" href="#inicio" aria-label="Inicio portfolio de David">
-          <span className="brand-mark">/</span>
+        <a className="brand" href="#inicio" aria-label={t.ui.home}>
+          <span className="brand-mark" aria-hidden="true">/</span>
           <span>DAVID</span>
         </a>
 
-        <nav
-          id="main-nav"
-          className={`nav-links${menuOpen ? ' open' : ''}`}
-          aria-label="Navegación principal"
-        >
-          {navItems.map((item, index) => (
+        <nav id="main-nav" className={`nav-links${menuOpen ? ' open' : ''}`} aria-label={t.ui.mainNav}>
+          {sectionIds.map((id, index) => (
             <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={activeSection === item.id ? 'active' : ''}
-              aria-current={activeSection === item.id ? 'true' : undefined}
+              key={id}
+              href={`#${id}`}
+              className={activeSection === id ? 'active' : ''}
+              aria-current={activeSection === id ? 'true' : undefined}
               onClick={() => setMenuOpen(false)}
             >
               <span className="nav-index">0{index + 2}</span>
-              {item.label}
+              {t.nav[id]}
             </a>
           ))}
         </nav>
@@ -208,20 +151,29 @@ function App() {
         <div className="topbar-actions">
           <button
             type="button"
+            className="lang-toggle"
+            aria-label={t.ui.language}
+            title={t.ui.language}
+            onClick={() => setLang((current) => (current === 'es' ? 'en' : 'es'))}
+          >
+            {t.ui.languageShort}
+          </button>
+          <button
+            type="button"
             className="theme-toggle"
-            aria-label="Cambiar tema"
+            aria-label={t.ui.theme}
             aria-pressed={theme === 'light'}
             onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
           >
-            {theme === 'dark' ? '☀' : '☾'}
+            <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
           </button>
-          <a className="availability" href="#contacto">
-            <span className="pulse" /> <span className="availability-text">disponible</span>
+          <a className="availability" href="#contacto" aria-label={t.ui.available}>
+            <span className="pulse" aria-hidden="true" /> <span className="availability-text">{t.ui.available}</span>
           </a>
           <button
             type="button"
             className={`menu-toggle${menuOpen ? ' open' : ''}`}
-            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={menuOpen ? t.ui.closeMenu : t.ui.openMenu}
             aria-expanded={menuOpen}
             aria-controls="main-nav"
             onClick={() => setMenuOpen((open) => !open)}
@@ -235,48 +187,39 @@ function App() {
       <main>
         <section className="hero" id="inicio">
           <div className="hero-copy reveal is-visible">
-            <p className="eyebrow"><span>01</span> / administración de sistemas informáticos</p>
+            <p className="eyebrow"><span>01</span> / {t.hero.eyebrow}</p>
             <h1>
-              Diseño sistemas<br />
-              <em>que resisten.</em>
+              {t.hero.title[0]}
+              <br />
+              <em>{t.hero.title[1]}</em>
             </h1>
-            <p className="hero-text">
-              Soy David, estudiante de ASIR. Construyo infraestructuras claras, seguras y fáciles de mantener,
-              desde la red hasta la automatización.
-            </p>
+            <p className="hero-text">{t.hero.text}</p>
 
             <div className="hero-actions">
               <a className="button button-primary" href="#proyectos">
-                ver proyectos <span>↗</span>
+                {t.hero.projects} <span aria-hidden="true">↗</span>
               </a>
-              <a
-                className="button button-ghost"
-                href={cvPath}
-                download="CV_David_Zabala_Maira.pdf"
-              >
-                descargar CV <span>↓</span>
+              <a className="button button-ghost" href={`${base}${cv.file}`} download={cv.file}>
+                {t.hero.cv} <span aria-hidden="true">↓</span>
               </a>
             </div>
           </div>
 
-          <div className="hero-console" aria-label="Estado del sistema">
-            <div className="console-head">
+          <div className="hero-console" role="img" aria-label={t.ui.systemStatus}>
+            <div className="console-head" aria-hidden="true">
               <span>system_status.log</span>
               <span className="live"><i /> LIVE</span>
             </div>
-            <div className="console-body">
-              <p><b className="cyan">$</b> whoami</p>
-              <p className="console-value">david / asir-admin</p>
+            <div className="console-body" aria-hidden="true">
+              {t.hero.console.map(([command, value]) => (
+                <div key={command}>
+                  <p><b className="cyan">$</b> {command}</p>
+                  <p className="console-value">{value}</p>
+                </div>
+              ))}
+              <p><b className="cyan">$</b> <span className="cursor" /></p>
 
-              <p><b className="cyan">$</b> uptime --portfolio</p>
-              <p className="console-value">online · aprendiendo siempre</p>
-
-              <p><b className="cyan">$</b> location</p>
-              <p className="console-value">bilbao, es</p>
-
-              <p><b className="cyan">$</b> <span className="cursor" aria-hidden="true" /></p>
-
-              <div className="mini-chart" aria-hidden="true">
+              <div className="mini-chart">
                 {Array.from({ length: 8 }, (_, i) => (
                   <span key={i} style={{ animationDelay: `${i * 120}ms` }} />
                 ))}
@@ -284,71 +227,115 @@ function App() {
             </div>
           </div>
 
-          <div className="scroll-note"><span className="scroll-line" /> desplázate para explorar</div>
+          <div className="scroll-note" aria-hidden="true"><span className="scroll-line" /> {t.ui.scroll}</div>
         </section>
 
         <section className="profile section-grid" id="perfil">
-          <div className="section-label"><span>02</span><span>perfil</span></div>
+          <div className="section-label"><span>02</span><span>{t.profile.label}</span></div>
 
           <div className="profile-content reveal">
             <div>
-              <p className="kicker">/ sobre mí</p>
-              <h2>Infraestructura con<br /><em>intención.</em></h2>
+              <p className="kicker">{t.profile.kicker}</p>
+              <SectionTitle lines={t.profile.title} />
             </div>
 
             <div className="profile-copy">
-              <p>
-                Me interesa entender cómo funcionan las cosas por debajo y convertir esa comprensión en soluciones útiles.
-                Trabajo entre servidores, redes, seguridad y scripts.
-              </p>
-              <p>
-                En cada laboratorio busco lo mismo: que todo sea observable, reproducible y que otra persona pueda
-                mantenerlo sin adivinar.
-              </p>
-            </div>
-
-            <div className="stats">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </div>
+              {t.profile.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+
+            <dl className="stats">
+              {t.profile.stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt>{stat.label}</dt>
+                  <dd>{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
         <section className="education section-grid" id="formacion">
-          <div className="section-label"><span>03</span><span>formación</span></div>
+          <div className="section-label"><span>03</span><span>{t.education.label}</span></div>
 
           <div className="education-content reveal">
-            <p className="kicker">/ recorrido</p>
-            <h2>Aprendiendo<br /><em>por capas.</em></h2>
+            <p className="kicker">{t.education.kicker}</p>
+            <SectionTitle lines={t.education.title} />
 
             <div className="education-list">
-            {education.map((item) => (
-              <div className="education-row" key={item.title}>
-                <span>{item.period}</span>
-                <strong>{item.title}</strong>
-                <span className="education-badge">{item.subtitle}</span>
+              {t.education.items.map((item) => (
+                <div className="education-row" key={item.badge}>
+                  <span>{item.period}</span>
+                  <strong>{item.title}</strong>
+                  <span className="education-badge">{item.badge}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="education-extra">
+              <div className="info-panel">
+                <h3><span>~/</span>{t.education.extraTitle}</h3>
+                <ul>
+                  {t.education.extra.map((course) => (
+                    <li key={course}>{course}</li>
+                  ))}
+                </ul>
               </div>
-            ))}
+
+              <div className="info-panel">
+                <h3><span>~/</span>{t.education.languagesTitle}</h3>
+                <ul className="language-list">
+                  {t.education.languages.map((language) => (
+                    <li key={language.name}>
+                      <span>{language.name}</span>
+                      <b>{language.level}</b>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
+        <section className="experience section-grid" id="experiencia">
+          <div className="section-label"><span>04</span><span>{t.experience.label}</span></div>
+
+          <div className="experience-content reveal">
+            <p className="kicker">{t.experience.kicker}</p>
+            <SectionTitle lines={t.experience.title} />
+
+            <ol className="timeline">
+              {t.experience.items.map((job) => (
+                <li className="timeline-item" key={job.company}>
+                  <div className="timeline-head">
+                    <span className="timeline-period">{job.period}</span>
+                    <h3>{job.role}</h3>
+                    <span className="timeline-company">{job.company}</span>
+                  </div>
+                  <ul>
+                    {job.tasks.map((task) => (
+                      <li key={task}>{task}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         <section className="projects section-grid" id="proyectos">
-          <div className="section-label"><span>04</span><span>proyectos</span></div>
+          <div className="section-label"><span>05</span><span>{t.projectsSection.label}</span></div>
 
           <div className="projects-content reveal">
             <div className="section-heading">
               <div>
-                <p className="kicker">/ trabajo de laboratorio</p>
-                <h2>Construido para<br /><em>aprender haciendo.</em></h2>
+                <p className="kicker">{t.projectsSection.kicker}</p>
+                <SectionTitle lines={t.projectsSection.title} />
               </div>
 
-              <div className="filters" role="group" aria-label="Filtrar proyectos">
-                {categories.map((category) => (
+              <div className="filters" role="group" aria-label={t.ui.filter}>
+                {filters.map((category) => (
                   <button
                     type="button"
                     aria-pressed={filter === category}
@@ -356,7 +343,7 @@ function App() {
                     onClick={() => setFilter(category)}
                     key={category}
                   >
-                    {category}
+                    {t.projectsSection.filters[category]}
                     <span className="filter-count">
                       {category === 'todos' ? projects.length : projects.filter((p) => p.category === category).length}
                     </span>
@@ -370,11 +357,13 @@ function App() {
                 <article className="project-card" key={project.title} data-category={project.category}>
                   <div className="project-top">
                     <span className="project-number">{project.number}</span>
-                    <span className={`project-status ${project.status === 'operativo' ? 'is-live' : 'is-wip'}`}><i /> {project.status}</span>
+                    <span className={`project-status ${project.live ? 'is-live' : 'is-wip'}`}>
+                      <i aria-hidden="true" /> {project.live ? t.projectsSection.live : t.projectsSection.wip}
+                    </span>
                   </div>
 
                   <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <p>{project.description[lang]}</p>
 
                   <div className="project-footer">
                     <div className="project-stack">
@@ -382,7 +371,11 @@ function App() {
                         <span key={item}>{item}</span>
                       ))}
                     </div>
-                    <span className="project-arrow" aria-hidden="true">↗</span>
+                    {project.link && (
+                      <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
+                        {t.ui.viewDocs} <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}
@@ -391,21 +384,21 @@ function App() {
         </section>
 
         <section className="stack section-grid" id="stack">
-          <div className="section-label"><span>05</span><span>stack técnico</span></div>
+          <div className="section-label"><span>06</span><span>{t.stack.label}</span></div>
 
           <div className="stack-content reveal">
-            <p className="kicker">/ herramientas que uso</p>
-            <h2>La caja de<br /><em>herramientas.</em></h2>
+            <p className="kicker">{t.stack.kicker}</p>
+            <SectionTitle lines={t.stack.title} />
 
             <div className="skill-groups">
-              {skillGroups.map((group) => (
+              {t.stack.groups.map((group) => (
                 <div className="skill-group" key={group.title}>
-                  <p className="skill-group-title"><span>~/</span>{group.title}</p>
-                  <div className="skill-cloud">
+                  <h3 className="skill-group-title"><span>~/</span>{group.title}</h3>
+                  <ul className="skill-cloud">
                     {group.items.map((skill, index) => (
-                      <span className={index === 0 ? 'highlight' : ''} key={skill}>{skill}</span>
+                      <li className={index === 0 ? 'highlight' : ''} key={skill}>{skill}</li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               ))}
             </div>
@@ -413,27 +406,22 @@ function App() {
         </section>
 
         <section className="documents section-grid" id="documentos">
-          <div className="section-label"><span>06</span><span>documentos</span></div>
+          <div className="section-label"><span>07</span><span>{t.documents.label}</span></div>
 
           <div className="documents-content reveal">
-            <p className="kicker">/ descargas</p>
-            <h2>Todo en<br /><em>un archivo.</em></h2>
+            <p className="kicker">{t.documents.kicker}</p>
+            <SectionTitle lines={t.documents.title} />
 
             <div className="document-list">
-              {documents.map((doc) => (
-                <a
-                  key={doc.file}
-                  className="document-card"
-                  href={`${import.meta.env.BASE_URL}${doc.file}`}
-                  download={doc.file}
-                >
+              {t.documents.items.map((doc) => (
+                <a key={doc.file} className="document-card" href={`${base}${doc.file}`} download={doc.file}>
                   <span className="document-icon" aria-hidden="true">PDF</span>
                   <span className="document-info">
                     <strong>{doc.title}</strong>
                     <span>{doc.description}</span>
                     <small>{doc.meta}</small>
                   </span>
-                  <span className="document-action">descargar <b aria-hidden="true">↓</b></span>
+                  <span className="document-action">{t.ui.download} <b aria-hidden="true">↓</b></span>
                 </a>
               ))}
             </div>
@@ -441,44 +429,38 @@ function App() {
         </section>
 
         <section className="contact section-grid" id="contacto">
-          <div className="section-label"><span>07</span><span>contacto</span></div>
+          <div className="section-label"><span>08</span><span>{t.contact.label}</span></div>
 
           <div className="contact-content reveal">
-            <p className="kicker">/ abre una conexión</p>
-            <h2>¿Construimos algo<br /><em>resistente?</em></h2>
+            <p className="kicker">{t.contact.kicker}</p>
+            <SectionTitle lines={t.contact.title} />
 
             <div className="contact-links">
               {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  className="contact-link"
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                >
-                  {link.label} <span>↗</span>
+                <a key={link.label} className="contact-link" href={link.href} target="_blank" rel="noreferrer">
+                  {link.label} <span aria-hidden="true">↗</span>
                 </a>
               ))}
             </div>
 
             <div className="contact-email-row">
               <a className="contact-email" href={`mailto:${EMAIL}`}>
-                {EMAIL} <span>↗</span>
+                {EMAIL} <span aria-hidden="true">↗</span>
               </a>
               <button type="button" className="copy-button" onClick={copyEmail} aria-live="polite">
-                {copied ? '✓ copiado' : 'copiar'}
+                {copied ? t.ui.copied : t.ui.copy}
               </button>
             </div>
 
-            <p className="contact-location">Bilbao, España · disponible para prácticas y proyectos</p>
+            <p className="contact-location">{t.contact.location}</p>
           </div>
         </section>
       </main>
 
       <footer>
         <span>DAVID © {new Date().getFullYear()}</span>
-        <span>construido con curiosidad + café</span>
-        <a href="#inicio" className="back-top">volver arriba ↑</a>
+        <span>{t.ui.footer}</span>
+        <a href="#inicio" className="back-top">{t.ui.backTop}</a>
       </footer>
     </div>
   )

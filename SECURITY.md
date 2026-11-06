@@ -1,21 +1,23 @@
-# Security Policy
+# Política de seguridad
 
-## Supported Versions
+Este repositorio contiene el portfolio personal de David Zabala: una web estática (React + Vite) publicada en GitHub Pages. No gestiona cuentas de usuario, formularios ni datos personales de visitantes.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+## Versión soportada
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+Solo se mantiene la versión publicada desde la rama `main`:
+<https://davidzabalaasir-create.github.io/portfolio/>
 
-## Reporting a Vulnerability
+## Cómo informar de una vulnerabilidad
 
-Use this section to tell people how to report a vulnerability.
+Si encuentras un problema de seguridad (por ejemplo, una dependencia vulnerable, un enlace malicioso o datos expuestos por error):
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+1. **No abras un issue público.** Usa el aviso privado de GitHub: pestaña **Security → Report a vulnerability**, o escribe a <davidzamaira2003@gmail.com>.
+2. Describe el problema, cómo reproducirlo y su posible impacto.
+
+Intentaré responder en un plazo de **7 días** y te mantendré informado de la corrección.
+
+## Medidas aplicadas
+
+- Dependencias con versiones fijadas en `package-lock.json` e instalación reproducible con `npm ci`.
+- Actualizaciones automáticas de dependencias y GitHub Actions mediante Dependabot, revisadas por el CI antes de fusionarse.
+- Los documentos publicados (CV y carta) no incluyen teléfono, dirección ni fecha de nacimiento.

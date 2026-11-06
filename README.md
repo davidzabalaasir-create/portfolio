@@ -76,6 +76,8 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 
 </details>
 
+📘 **[Manual de laboratorios](docs/laboratorios/README.md)** — configuración paso a paso de cada proyecto y las capturas que documentan el resultado.
+
 ## `04` · `nmap --topology ~/laboratorio-lan`
 
 <img src=".github/readme/network.svg" alt="Topología del laboratorio: WAN, firewall pfSense, sensor Suricata y VLAN de administración, servidores y usuarios" width="100%" />

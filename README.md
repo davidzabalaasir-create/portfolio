@@ -182,6 +182,6 @@ El contenido editable (proyectos, formación, experiencia, stack, contacto) vive
 <a href="https://www.linkedin.com/in/david-zabala-66b655233"><img src="https://img.shields.io/badge/LinkedIn-08101d?style=for-the-badge&logo=linkedin&logoColor=62d9df" alt="LinkedIn" /></a>
 <a href="https://github.com/davidzabalaasir-create"><img src="https://img.shields.io/badge/GitHub-08101d?style=for-the-badge&logo=github&logoColor=62d9df" alt="GitHub" /></a>
 
-<sub><code>exit 0</code> · construido con curiosidad + café</sub>
+<sub><code>exit 0</code></sub>
 
 </div>

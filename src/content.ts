@@ -20,6 +20,15 @@ export const EMAIL = 'davidzamaira2003@gmail.com'
 export const LINKEDIN = 'https://www.linkedin.com/in/david-zabala-66b655233'
 export const GITHUB = 'https://github.com/davidzabalaasir-create'
 
+// Redes sociales: aparecen en contacto y en el pie de página.
+// Para añadir una red nueva, crea su icono en SocialIcon.tsx y añade una línea aquí.
+export type SocialId = 'linkedin' | 'github' | 'email'
+export const SOCIALS: { id: SocialId; label: string; href: string }[] = [
+  { id: 'linkedin', label: 'LinkedIn', href: LINKEDIN },
+  { id: 'github', label: 'GitHub', href: GITHUB },
+  { id: 'email', label: 'Email', href: `mailto:${EMAIL}` },
+]
+
 export const projects: Project[] = [
   {
     number: '01',

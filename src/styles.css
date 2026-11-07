@@ -1060,9 +1060,17 @@ footer {
 
 .skill-groups {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
   margin-top: 2.2rem;
+}
+
+.skill-group {
+  grid-column: span 2;
+}
+
+.skill-group:nth-child(n + 4) {
+  grid-column: span 3;
 }
 
 .skill-group {
@@ -1846,6 +1854,11 @@ footer b {
   .document-list,
   .education-extra {
     grid-template-columns: 1fr;
+  }
+
+  .skill-group,
+  .skill-group:nth-child(n + 4) {
+    grid-column: auto;
   }
 }
 

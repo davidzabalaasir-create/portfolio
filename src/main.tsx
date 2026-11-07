@@ -474,20 +474,6 @@ function App() {
           <span>DAVID © {new Date().getFullYear()}</span>
           <span>{t.ui.footer}</span>
         </div>
-        <nav className="footer-social" aria-label={lang === 'es' ? 'Redes sociales' : 'Social links'}>
-          {SOCIALS.map((social) => (
-            <a
-              key={social.id}
-              href={social.href}
-              aria-label={social.label}
-              title={social.label}
-              target={social.href.startsWith('http') ? '_blank' : undefined}
-              rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
-            >
-              <SocialIcon id={social.id} />
-            </a>
-          ))}
-        </nav>
         <a href="#inicio" className="back-top">{t.ui.backTop}</a>
       </footer>
     </div>

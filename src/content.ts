@@ -221,6 +221,12 @@ export const content = {
           meta: 'PDF · 178 KB · español',
         },
         {
+          file: 'CV_Europass_David_Zabala_Maira.pdf',
+          title: 'CV Europass',
+          description: 'Formato europeo estándar, con niveles de idioma del MCER.',
+          meta: 'PDF · 88 KB · español',
+        },
+        {
           file: 'Carta_de_Motivacion_David_Zabala.pdf',
           title: 'Carta de motivación',
           description: 'Presentación personal e intereses profesionales.',
@@ -376,6 +382,12 @@ export const content = {
           title: 'Résumé (CV)',
           description: 'Education, experience and technical skills.',
           meta: 'PDF · 178 KB · Spanish',
+        },
+        {
+          file: 'CV_Europass_David_Zabala_Maira.pdf',
+          title: 'Europass CV',
+          description: 'Standard European format, with CEFR language levels.',
+          meta: 'PDF · 88 KB · Spanish',
         },
         {
           file: 'Carta_de_Motivacion_David_Zabala.pdf',

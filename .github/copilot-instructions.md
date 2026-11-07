@@ -4,4 +4,4 @@
 - El contenido editable vive en `src/content.ts` (español e inglés); la lógica en `src/main.tsx` y los estilos en `src/styles.css`.
 - Mantener la estética técnica tipo terminal, responsive y accesible.
 - `npm run dev` para desarrollo y `npm run build` para validar producción.
-- No inventar datos personales ni publicar teléfono, dirección o fecha de nacimiento.
+- No inventar datos personales ni publicar dirección o fecha de nacimiento. El teléfono solo aparece en el CV Europass, por decisión del autor.

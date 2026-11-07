@@ -12,8 +12,12 @@ export type Project = {
   live: boolean
   stack: string[]
   description: Record<Lang, string>
-  /** Enlace opcional a la documentación o repositorio del laboratorio. */
+  /** Enlace opcional a la documentación del laboratorio. */
   link?: string
+  /** Web publicada del proyecto. */
+  demo?: string
+  /** Repositorio público del código. */
+  repo?: string
 }
 
 export const EMAIL = 'davidzamaira2003@gmail.com'
@@ -76,6 +80,31 @@ export const projects: Project[] = [
       en: 'Intrusion detection system to analyse traffic and respond to network threats.',
     },
   },
+  {
+    number: '05',
+    title: 'EJPTV2 CHEATSHEET',
+    category: 'seguridad',
+    live: true,
+    stack: ['React', 'Vite', 'Tailwind'],
+    description: {
+      es: 'Web de estudio para la certificación eJPTv2: comandos de pentesting por fases, buscador, filtros y checklist con progreso guardado.',
+      en: 'Study web app for the eJPTv2 certification: pentesting commands by phase, search, filters and a checklist that saves progress.',
+    },
+    demo: 'https://ejptv2-pentest-cheatsheet.vercel.app',
+  },
+  {
+    number: '06',
+    title: 'SYSADMIN CHEATSHEET',
+    category: 'sistemas',
+    live: true,
+    stack: ['JavaScript', 'Tailwind', 'PWA'],
+    description: {
+      es: 'Biblioteca bilingüe de 256 comandos de Linux, Windows, Active Directory, redes y contenedores, con buscador, modo práctica y uso sin conexión.',
+      en: 'Bilingual library of 256 Linux, Windows, Active Directory, networking and container commands, with search, practice mode and offline use.',
+    },
+    demo: 'https://davidzabalaasir-create.github.io/sysadmin-cheatsheet/',
+    repo: 'https://github.com/davidzabalaasir-create/sysadmin-cheatsheet',
+  },
 ]
 
 export const content = {
@@ -112,6 +141,8 @@ export const content = {
       download: 'descargar',
       filter: 'Filtrar proyectos',
       viewDocs: 'ver documentación',
+      viewDemo: 'ver web',
+      viewCode: 'código',
     },
     hero: {
       eyebrow: 'administración de sistemas informáticos',
@@ -275,6 +306,8 @@ export const content = {
       download: 'download',
       filter: 'Filter projects',
       viewDocs: 'view docs',
+      viewDemo: 'live site',
+      viewCode: 'code',
     },
     hero: {
       eyebrow: 'network systems administration',

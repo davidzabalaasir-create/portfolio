@@ -73,6 +73,8 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 | **LABORATORIO LAN** | redes | Segmentar la red con VLAN, firewall perimetral y servicios aislados por rol. | 🟢 operativo |
 | **BACKUP ZERO** | sistemas | Copias 3-2-1 automatizadas con snapshots, cifrado y restauraciones verificadas. | 🟠 en evolución |
 | **SURICATA SHIELD** | seguridad | Detectar intrusiones analizando el tráfico y responder ante amenazas. | 🟠 en evolución |
+| **[EJPTV2 CHEATSHEET](https://ejptv2-pentest-cheatsheet.vercel.app)** | seguridad | Web de estudio para la eJPTv2: comandos de pentesting por fases, buscador, filtros y checklist. | 🟢 operativo |
+| **[SYSADMIN CHEATSHEET](https://davidzabalaasir-create.github.io/sysadmin-cheatsheet/)** | sistemas | Biblioteca bilingüe de 256 comandos (Linux, Windows, AD, redes, contenedores) con modo práctica y PWA. [Código](https://github.com/davidzabalaasir-create/sysadmin-cheatsheet) | 🟢 operativo |
 
 </details>
 

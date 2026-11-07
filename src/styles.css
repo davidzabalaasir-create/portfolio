@@ -1039,6 +1039,14 @@ footer {
   text-transform: lowercase;
 }
 
+.project-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
 .project-link {
   flex-shrink: 0;
   color: var(--lime);

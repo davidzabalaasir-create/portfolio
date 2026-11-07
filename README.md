@@ -174,7 +174,7 @@ El contenido editable (proyectos, formación, experiencia, stack, contacto) vive
 
 <div align="center">
 
-**¿Construimos algo resistente?** Disponible para prácticas y proyectos.
+**¿Buscas un técnico? Aquí estoy.** Disponible para prácticas y proyectos.
 
 <a href="mailto:davidzamaira2003@gmail.com"><img src="https://img.shields.io/badge/davidzamaira2003@gmail.com-08101d?style=for-the-badge&logo=gmail&logoColor=d2ff52" alt="Email" /></a>
 <a href="https://www.linkedin.com/in/david-zabala-66b655233"><img src="https://img.shields.io/badge/LinkedIn-08101d?style=for-the-badge&logo=linkedin&logoColor=62d9df" alt="LinkedIn" /></a>

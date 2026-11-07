@@ -2,7 +2,8 @@ import { StrictMode, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { AiSoc } from './AiSoc'
 import { aisocText } from './aisoc-data'
-import { content, EMAIL, GITHUB, LINKEDIN, projects, type FilterId, type Lang } from './content'
+import { SocialIcon } from './SocialIcon'
+import { content, EMAIL, projects, SOCIALS, type FilterId, type Lang } from './content'
 import './styles.css'
 
 type Theme = 'dark' | 'light'
@@ -118,10 +119,7 @@ function App() {
   )
 
   const cv = t.documents.items[0]
-  const socialLinks = [
-    { label: 'LinkedIn', href: LINKEDIN },
-    { label: 'GitHub', href: GITHUB },
-  ]
+  const socialLinks = SOCIALS.filter((s) => s.id !== 'email')
 
   return (
     <div className="app-shell">
@@ -452,7 +450,7 @@ function App() {
             <div className="contact-links">
               {socialLinks.map((link) => (
                 <a key={link.label} className="contact-link" href={link.href} target="_blank" rel="noreferrer">
-                  {link.label} <span aria-hidden="true">↗</span>
+                  <SocialIcon id={link.id} size={16} /> {link.label} <span aria-hidden="true">↗</span>
                 </a>
               ))}
             </div>
@@ -472,8 +470,24 @@ function App() {
       </main>
 
       <footer>
-        <span>DAVID © {new Date().getFullYear()}</span>
-        <span>{t.ui.footer}</span>
+        <div className="footer-meta">
+          <span>DAVID © {new Date().getFullYear()}</span>
+          <span>{t.ui.footer}</span>
+        </div>
+        <nav className="footer-social" aria-label={lang === 'es' ? 'Redes sociales' : 'Social links'}>
+          {SOCIALS.map((social) => (
+            <a
+              key={social.id}
+              href={social.href}
+              aria-label={social.label}
+              title={social.label}
+              target={social.href.startsWith('http') ? '_blank' : undefined}
+              rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
+            >
+              <SocialIcon id={social.id} />
+            </a>
+          ))}
+        </nav>
         <a href="#inicio" className="back-top">{t.ui.backTop}</a>
       </footer>
     </div>

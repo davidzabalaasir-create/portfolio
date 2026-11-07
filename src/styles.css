@@ -1302,6 +1302,7 @@ footer {
   margin: 0 auto;
   padding: 42px 5.5vw 60px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   border-top: 1px solid var(--line);
@@ -1310,6 +1311,47 @@ footer {
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: lowercase;
+}
+
+/* Redes sociales en el pie */
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--text);
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: var(--lime);
+  border-color: rgba(210, 255, 82, 0.45);
+  transform: translateY(-2px);
+}
+
+:root[data-theme='light'] .footer-social a:hover,
+:root[data-theme='light'] .footer-social a:focus-visible {
+  color: #5f8a00;
+}
+
+.contact-link .social-icon {
+  flex-shrink: 0;
 }
 
 footer b {
@@ -1990,6 +2032,7 @@ footer b {
 
   footer {
     flex-direction: column;
+    align-items: flex-start;
     padding-left: 6vw;
     padding-right: 6vw;
   }

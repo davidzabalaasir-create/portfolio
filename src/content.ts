@@ -195,6 +195,7 @@ export const content = {
         { title: 'redes & seguridad', items: ['TCP/IP', 'DNS / DHCP', 'pfSense', 'VLAN', 'Suricata', 'Cableado Cat6'] },
         { title: 'soporte & hardware', items: ['Montaje y reparación', 'BIOS / UEFI', 'Helpdesk', 'Recuperación de datos'] },
         { title: 'automatización', items: ['Bash', 'Python', 'SQL', 'Git'] },
+        { title: 'desarrollo web', items: ['HTML', 'CSS', 'JavaScript'] },
       ],
     },
     documents: {
@@ -351,6 +352,7 @@ export const content = {
         { title: 'networks & security', items: ['TCP/IP', 'DNS / DHCP', 'pfSense', 'VLAN', 'Suricata', 'Cat6 cabling'] },
         { title: 'support & hardware', items: ['PC build & repair', 'BIOS / UEFI', 'Helpdesk', 'Data recovery'] },
         { title: 'automation', items: ['Bash', 'Python', 'SQL', 'Git'] },
+        { title: 'web development', items: ['HTML', 'CSS', 'JavaScript'] },
       ],
     },
     documents: {

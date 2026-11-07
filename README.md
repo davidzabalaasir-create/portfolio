@@ -90,7 +90,7 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 
 <table>
   <tr>
-    <td valign="top" width="25%">
+    <td valign="top" width="20%">
 
 **`~/sistemas`**
 
@@ -100,7 +100,7 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 <img src="https://img.shields.io/badge/VirtualBox-08101d?style=flat-square&logo=virtualbox&logoColor=62d9df" alt="VirtualBox" />
 
 </td>
-    <td valign="top" width="25%">
+    <td valign="top" width="20%">
 
 **`~/soporte & hardware`**
 
@@ -110,7 +110,7 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 <img src="https://img.shields.io/badge/Helpdesk-08101d?style=flat-square&logo=zendesk&logoColor=62d9df" alt="Helpdesk" />
 
 </td>
-    <td valign="top" width="25%">
+    <td valign="top" width="20%">
 
 **`~/redes & seguridad`**
 
@@ -121,7 +121,7 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 <img src="https://img.shields.io/badge/Suricata-08101d?style=flat-square&logo=suricata&logoColor=ff6b6b" alt="Suricata" />
 
 </td>
-    <td valign="top" width="25%">
+    <td valign="top" width="20%">
 
 **`~/automatización`**
 
@@ -129,6 +129,15 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 <img src="https://img.shields.io/badge/Python-08101d?style=flat-square&logo=python&logoColor=62d9df" alt="Python" />
 <img src="https://img.shields.io/badge/SQL-08101d?style=flat-square&logo=mysql&logoColor=62d9df" alt="SQL" />
 <img src="https://img.shields.io/badge/Git-08101d?style=flat-square&logo=git&logoColor=62d9df" alt="Git" />
+
+</td>
+    <td valign="top" width="20%">
+
+**`~/desarrollo web`**
+
+<img src="https://img.shields.io/badge/HTML-08101d?style=flat-square&logo=html5&logoColor=d2ff52" alt="HTML" />
+<img src="https://img.shields.io/badge/CSS-08101d?style=flat-square&logo=css&logoColor=62d9df" alt="CSS" />
+<img src="https://img.shields.io/badge/JavaScript-08101d?style=flat-square&logo=javascript&logoColor=62d9df" alt="JavaScript" />
 
 </td>
   </tr>

@@ -22,11 +22,12 @@ export const GITHUB = 'https://github.com/davidzabalaasir-create'
 
 // Redes sociales: aparecen en contacto y en el pie de página.
 // Para añadir una red nueva, crea su icono en SocialIcon.tsx y añade una línea aquí.
-export type SocialId = 'linkedin' | 'github' | 'instagram' | 'email'
+export type SocialId = 'linkedin' | 'github' | 'instagram' | 'tryhackme' | 'email'
 export const SOCIALS: { id: SocialId; label: string; href: string }[] = [
   { id: 'linkedin', label: 'LinkedIn', href: LINKEDIN },
   { id: 'github', label: 'GitHub', href: GITHUB },
   { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/davidd_0.0' },
+  { id: 'tryhackme', label: 'TryHackMe', href: 'https://tryhackme.com/p/david.zabala.asir' },
   { id: 'email', label: 'Email', href: `mailto:${EMAIL}` },
 ]
 

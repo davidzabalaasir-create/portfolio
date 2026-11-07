@@ -24,6 +24,12 @@ const paths: Record<SocialId, ReactElement> = {
       <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none" />
     </g>
   ),
+  tryhackme: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round">
+      <path d="M7 18.5h10.5a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.6 9.2 4.7 4.7 0 0 0 7 18.5z" />
+      <path d="M10 13.5 8.5 15l1.5 1.5M14 13.5l1.5 1.5-1.5 1.5" />
+    </g>
+  ),
   email: (
     <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
       <rect x="2.5" y="5" width="19" height="14" rx="2" />

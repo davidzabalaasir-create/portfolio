@@ -486,7 +486,6 @@ function App() {
       <footer>
         <div className="footer-meta">
           <span>DAVID © {new Date().getFullYear()}</span>
-          <span>{t.ui.footer}</span>
         </div>
         <a href="#inicio" className="back-top">{t.ui.backTop}</a>
       </footer>

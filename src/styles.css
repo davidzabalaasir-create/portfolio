@@ -15,6 +15,9 @@
   --soft-cyan: rgba(98, 217, 223, 0.12);
   --shadow: rgba(7, 12, 18, 0.45);
   --focus: rgba(210, 255, 82, 0.15);
+  /* Cursores propios (punto de mira) para las cajas */
+  --cursor-box: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Ccircle cx='16' cy='16' r='9' stroke='%2308101d' stroke-width='4.5'/%3E%3Cpath d='M16 2v7M16 23v7M2 16h7M23 16h7' stroke='%2308101d' stroke-width='4.5'/%3E%3Ccircle cx='16' cy='16' r='9' stroke='%23d2ff52' stroke-width='2'/%3E%3Cpath d='M16 2v7M16 23v7M2 16h7M23 16h7' stroke='%23d2ff52' stroke-width='2'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2' fill='%2362d9df' stroke='%2308101d' stroke-width='1'/%3E%3C/svg%3E") 16 16, crosshair;
+  --cursor-click: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Ccircle cx='16' cy='16' r='9' stroke='%2308101d' stroke-width='4.5'/%3E%3Cpath d='M16 2v7M16 23v7M2 16h7M23 16h7' stroke='%2308101d' stroke-width='4.5'/%3E%3Ccircle cx='16' cy='16' r='9' stroke='%2362d9df' stroke-width='2'/%3E%3Cpath d='M16 2v7M16 23v7M2 16h7M23 16h7' stroke='%2362d9df' stroke-width='2'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='5' fill='%23d2ff52' stroke='%2308101d' stroke-width='1.5'/%3E%3C/svg%3E") 16 16, pointer;
 }
 
 :root[data-theme='light'] {
@@ -1790,6 +1793,28 @@ footer b {
   .aisoc-disclaimer {
     border-radius: 14px;
   }
+}
+
+/* Cursor de punto de mira al pasar por las cajas */
+.project-card,
+.skill-group,
+.info-panel,
+.education-row,
+.timeline-item,
+.hero-console,
+.aisoc-kpis div,
+.aisoc-analyst {
+  cursor: var(--cursor-box);
+}
+
+.document-card,
+.aisoc-alert,
+.project-card a,
+.skill-group a,
+.info-panel a,
+.aisoc-analyst a,
+.aisoc-analyst button {
+  cursor: var(--cursor-click);
 }
 
 /* Animaciones de entrada */

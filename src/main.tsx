@@ -371,10 +371,24 @@ function App() {
                         <span key={item}>{item}</span>
                       ))}
                     </div>
-                    {project.link && (
-                      <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
-                        {t.ui.viewDocs} <span aria-hidden="true">↗</span>
-                      </a>
+                    {(project.link || project.demo || project.repo) && (
+                      <div className="project-links">
+                        {project.demo && (
+                          <a className="project-link" href={project.demo} target="_blank" rel="noreferrer">
+                            {t.ui.viewDemo} <span aria-hidden="true">↗</span>
+                          </a>
+                        )}
+                        {project.repo && (
+                          <a className="project-link" href={project.repo} target="_blank" rel="noreferrer">
+                            {t.ui.viewCode} <span aria-hidden="true">↗</span>
+                          </a>
+                        )}
+                        {project.link && (
+                          <a className="project-link" href={project.link} target="_blank" rel="noreferrer">
+                            {t.ui.viewDocs} <span aria-hidden="true">↗</span>
+                          </a>
+                        )}
+                      </div>
                     )}
                   </div>
                 </article>

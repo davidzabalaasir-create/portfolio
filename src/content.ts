@@ -220,7 +220,7 @@ export const content = {
     contact: {
       label: 'contacto',
       kicker: '/ abre una conexión',
-      title: ['¿Construimos algo', 'resistente?'],
+      title: ['¿Buscas un técnico?', 'Aquí estoy.'],
       location: 'Bilbao, España · disponible para prácticas y proyectos',
     },
   },
@@ -377,7 +377,7 @@ export const content = {
     contact: {
       label: 'contact',
       kicker: '/ open a connection',
-      title: ['Shall we build something', 'resilient?'],
+      title: ['Looking for a technician?', "I'm here."],
       location: 'Bilbao, Spain · open to internships and projects',
     },
   },

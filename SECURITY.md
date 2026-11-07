@@ -20,4 +20,4 @@ Intentaré responder en un plazo de **7 días** y te mantendré informado de la 
 
 - Dependencias con versiones fijadas en `package-lock.json` e instalación reproducible con `npm ci`.
 - Actualizaciones automáticas de dependencias y GitHub Actions mediante Dependabot, revisadas por el CI antes de fusionarse.
-- Los documentos publicados (CV y carta) no incluyen teléfono, dirección ni fecha de nacimiento.
+- El CV estándar y la carta de motivación publicados no incluyen teléfono, dirección ni fecha de nacimiento. El CV Europass incluye el teléfono de contacto por decisión del autor.

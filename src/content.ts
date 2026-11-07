@@ -188,8 +188,8 @@ export const content = {
     },
     stack: {
       label: 'stack técnico',
-      kicker: '/ herramientas que uso',
-      title: ['La caja de', 'herramientas.'],
+      kicker: '/ competencias técnicas',
+      title: ['Lo que sé', 'hacer.'],
       groups: [
         { title: 'sistemas', items: ['Linux', 'Windows Server', 'Windows 10/11', 'Docker', 'Virtualización'] },
         { title: 'redes & seguridad', items: ['TCP/IP', 'DNS / DHCP', 'pfSense', 'VLAN', 'Suricata', 'Cableado Cat6'] },
@@ -345,8 +345,8 @@ export const content = {
     },
     stack: {
       label: 'tech stack',
-      kicker: '/ tools I use',
-      title: ['The', 'toolbox.'],
+      kicker: '/ technical skills',
+      title: ['What I', 'can do.'],
       groups: [
         { title: 'systems', items: ['Linux', 'Windows Server', 'Windows 10/11', 'Docker', 'Virtualisation'] },
         { title: 'networks & security', items: ['TCP/IP', 'DNS / DHCP', 'pfSense', 'VLAN', 'Suricata', 'Cat6 cabling'] },

@@ -75,6 +75,7 @@ mar 2022 — may 2022  Técnico de redes de datos (FCT) · Colegio Gaztelueta
 | **SURICATA SHIELD** | seguridad | Detectar intrusiones analizando el tráfico y responder ante amenazas. | 🟠 en evolución |
 | **[EJPTV2 CHEATSHEET](https://ejptv2-pentest-cheatsheet.vercel.app)** | seguridad | Web de estudio para la eJPTv2: comandos de pentesting por fases, buscador, filtros y checklist. | 🟢 operativo |
 | **[SYSADMIN CHEATSHEET](https://davidzabalaasir-create.github.io/sysadmin-cheatsheet/)** | sistemas | Biblioteca bilingüe de 256 comandos (Linux, Windows, AD, redes, contenedores) con modo práctica y PWA. [Código](https://github.com/davidzabalaasir-create/sysadmin-cheatsheet) | 🟢 operativo |
+| **[WAZUH SIEM LAB](https://github.com/davidzabalaasir-create/Wazuh---Proyect)** | seguridad | SIEM con Wazuh: centraliza logs de Linux, Windows y red, detecta ataques (MITRE ATT&CK) y responde automáticamente. | 🟠 en evolución |
 
 </details>
 

@@ -105,6 +105,18 @@ export const projects: Project[] = [
     demo: 'https://davidzabalaasir-create.github.io/sysadmin-cheatsheet/',
     repo: 'https://github.com/davidzabalaasir-create/sysadmin-cheatsheet',
   },
+  {
+    number: '07',
+    title: 'WAZUH SIEM LAB',
+    category: 'seguridad',
+    live: false,
+    stack: ['Wazuh', 'Sysmon', 'MITRE ATT&CK'],
+    description: {
+      es: 'SIEM con Wazuh 4.14 que centraliza logs de Linux, Windows y red, detecta ataques mapeados a MITRE ATT&CK y bloquea al atacante con respuesta activa.',
+      en: 'Wazuh 4.14 SIEM that centralises Linux, Windows and network logs, detects attacks mapped to MITRE ATT&CK and blocks the attacker with active response.',
+    },
+    repo: 'https://github.com/davidzabalaasir-create/Wazuh---Proyect',
+  },
 ]
 
 export const content = {
@@ -165,7 +177,7 @@ export const content = {
         'En cada laboratorio busco lo mismo: que todo sea observable, reproducible y que otra persona pueda mantenerlo sin adivinar.',
       ],
       stats: [
-        { value: '04', label: 'laboratorios propios' },
+        { value: '05', label: 'laboratorios propios' },
         { value: '02', label: 'ciclos de FP en informática' },
         { value: '02', label: 'experiencias en IT' },
       ],
@@ -329,7 +341,7 @@ export const content = {
         'In every lab I aim for the same thing: everything observable, reproducible and maintainable by someone else without guesswork.',
       ],
       stats: [
-        { value: '04', label: 'personal labs' },
+        { value: '05', label: 'personal labs' },
         { value: '02', label: 'IT vocational programmes' },
         { value: '02', label: 'IT work experiences' },
       ],

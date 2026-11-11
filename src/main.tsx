@@ -8,7 +8,7 @@ import './styles.css'
 
 type Theme = 'dark' | 'light'
 
-const sectionIds = ['perfil', 'formacion', 'experiencia', 'proyectos', 'aisoc', 'stack', 'documentos', 'contacto'] as const
+const sectionIds = ['perfil', 'formacion', 'experiencia', 'certificaciones', 'proyectos', 'aisoc', 'stack', 'documentos', 'contacto'] as const
 const filters: FilterId[] = ['todos', 'redes', 'sistemas', 'seguridad']
 const base = import.meta.env.BASE_URL
 
@@ -142,7 +142,7 @@ function App() {
               aria-current={activeSection === id ? 'true' : undefined}
               onClick={() => setMenuOpen(false)}
             >
-              <span className="nav-index">0{index + 2}</span>
+              <span className="nav-index">{String(index + 2).padStart(2, '0')}</span>
               {t.nav[id]}
             </a>
           ))}
@@ -324,8 +324,60 @@ function App() {
           </div>
         </section>
 
+        <section className="certification section-grid" id="certificaciones">
+          <div className="section-label"><span>05</span><span>{t.certification.label}</span></div>
+
+          <div className="certification-content reveal">
+            <p className="kicker">{t.certification.kicker}</p>
+            <SectionTitle lines={t.certification.title} />
+
+            <article className="cert-card">
+              <div className="cert-head">
+                <div className="cert-badge" aria-hidden="true">
+                  <span>CCNA</span>
+                </div>
+                <div className="cert-title">
+                  <h3>{t.certification.name}</h3>
+                  <p>{t.certification.fullName}</p>
+                  <p className="cert-exam">{t.certification.exam}</p>
+                </div>
+                <span className="cert-status">
+                  <i aria-hidden="true" /> {t.certification.status}
+                </span>
+              </div>
+
+              <p className="cert-description">{t.certification.description}</p>
+
+              <ul className="cert-topics">
+                {t.certification.topics.map((topic) => (
+                  <li key={topic}>{topic}</li>
+                ))}
+              </ul>
+
+              <h4 className="cert-resources-title"><span>~/</span>{t.certification.resourcesTitle}</h4>
+              <div className="cert-resources">
+                {t.certification.resources.map((resource) => (
+                  <div className="cert-resource" key={resource.name}>
+                    <strong>{resource.name}</strong>
+                    <p>{resource.description}</p>
+                    <small>{resource.meta}</small>
+                    <div className="cert-resource-links">
+                      <a href={resource.demo} target="_blank" rel="noreferrer">
+                        {t.ui.viewDemo} <span aria-hidden="true">↗</span>
+                      </a>
+                      <a href={resource.repo} target="_blank" rel="noreferrer">
+                        {t.ui.viewCode} <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </div>
+        </section>
+
         <section className="projects section-grid" id="proyectos">
-          <div className="section-label"><span>05</span><span>{t.projectsSection.label}</span></div>
+          <div className="section-label"><span>06</span><span>{t.projectsSection.label}</span></div>
 
           <div className="projects-content reveal">
             <div className="section-heading">
@@ -398,7 +450,7 @@ function App() {
         </section>
 
         <section className="aisoc-section section-grid" id="aisoc">
-          <div className="section-label"><span>06</span><span>{aisocText[lang].label}</span></div>
+          <div className="section-label"><span>07</span><span>{aisocText[lang].label}</span></div>
 
           <div className="aisoc-content reveal">
             <p className="kicker">{aisocText[lang].kicker}</p>
@@ -410,7 +462,7 @@ function App() {
         </section>
 
         <section className="stack section-grid" id="stack">
-          <div className="section-label"><span>07</span><span>{t.stack.label}</span></div>
+          <div className="section-label"><span>08</span><span>{t.stack.label}</span></div>
 
           <div className="stack-content reveal">
             <p className="kicker">{t.stack.kicker}</p>
@@ -432,7 +484,7 @@ function App() {
         </section>
 
         <section className="documents section-grid" id="documentos">
-          <div className="section-label"><span>08</span><span>{t.documents.label}</span></div>
+          <div className="section-label"><span>09</span><span>{t.documents.label}</span></div>
 
           <div className="documents-content reveal">
             <p className="kicker">{t.documents.kicker}</p>
@@ -455,7 +507,7 @@ function App() {
         </section>
 
         <section className="contact section-grid" id="contacto">
-          <div className="section-label"><span>09</span><span>{t.contact.label}</span></div>
+          <div className="section-label"><span>10</span><span>{t.contact.label}</span></div>
 
           <div className="contact-content reveal">
             <p className="kicker">{t.contact.kicker}</p>

@@ -32,6 +32,8 @@ español (nativo) · inglés (B1) · euskera (B1)
 | `1` | 2023 — 2025 | **SMR** · Sistemas Microinformáticos y Redes · Mikeldi | ✅ completado |
 | `2` | 2025 — hoy | **ASIR** · Administración de Sistemas Informáticos en Red | 🟢 en curso |
 
+> 🎯 **Certificación en progreso: CCNA 200-301 (v2.0)** — preparándola con mi [Roadmap CCNA](https://davidzabalaasir-create.github.io/roadmap-ccna/) de 22 semanas y mi explorador interactivo [Protocolos de Red](https://protocolos-de-red-eight.vercel.app) (66 lecciones, paquetes decodificados byte a byte).
+
 <details>
 <summary><b>📚 Formación complementaria</b></summary>
 

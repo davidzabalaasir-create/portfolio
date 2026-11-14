@@ -46,6 +46,15 @@ function App() {
 
   const t = content[lang]
 
+  const roles = t.hero.roles
+  const [roleText, setRoleText] = useState('')
+  const [roleDeleting, setRoleDeleting] = useState(false)
+  const [roleIndex, setRoleIndex] = useState(0)
+  const reducedMotion = useMemo(
+    () => typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
+    [],
+  )
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#08101d' : '#edf4f2')
@@ -103,6 +112,37 @@ function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [menuOpen])
 
+  // Título rotativo del hero: reinicia al cambiar de idioma
+  useEffect(() => {
+    setRoleText('')
+    setRoleDeleting(false)
+    setRoleIndex(0)
+  }, [lang])
+
+  // Efecto de tecleo que alterna los dos "Proceso de ser…"
+  useEffect(() => {
+    if (reducedMotion) {
+      setRoleText(roles[0])
+      return
+    }
+    const full = roles[roleIndex % roles.length]
+    let delay = roleDeleting ? 45 : 85
+    if (!roleDeleting && roleText === full) delay = 1900
+    else if (roleDeleting && roleText === '') delay = 320
+
+    const timer = setTimeout(() => {
+      if (!roleDeleting && roleText === full) {
+        setRoleDeleting(true)
+      } else if (roleDeleting && roleText === '') {
+        setRoleDeleting(false)
+        setRoleIndex((index) => (index + 1) % roles.length)
+      } else {
+        setRoleText(roleDeleting ? full.slice(0, roleText.length - 1) : full.slice(0, roleText.length + 1))
+      }
+    }, delay)
+    return () => clearTimeout(timer)
+  }, [roleText, roleDeleting, roleIndex, roles, reducedMotion])
+
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(EMAIL)
@@ -133,19 +173,9 @@ function App() {
           <span>DAVID</span>
         </a>
 
-        <nav id="main-nav" className={`nav-links${menuOpen ? ' open' : ''}`} aria-label={t.ui.mainNav}>
-          {sectionIds.map((id, index) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              className={activeSection === id ? 'active' : ''}
-              aria-current={activeSection === id ? 'true' : undefined}
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className="nav-index">{String(index + 2).padStart(2, '0')}</span>
-              {t.nav[id]}
-            </a>
-          ))}
+        <nav className="topbar-primary" aria-label={t.ui.primaryNav}>
+          <a href="#proyectos" onClick={() => setMenuOpen(false)}>{t.nav.proyectos}</a>
+          <a href="#contacto" onClick={() => setMenuOpen(false)}>{t.nav.contacto}</a>
         </nav>
 
         <div className="topbar-actions">
@@ -184,10 +214,34 @@ function App() {
         </div>
       </header>
 
+      {/* Fuera del <header>: su backdrop-filter crearía un bloque contenedor
+          que confina este panel fixed. Como hermano, cubre toda la ventana. */}
+      <nav id="main-nav" className={`nav-links${menuOpen ? ' open' : ''}`} aria-label={t.ui.mainNav}>
+        {sectionIds.map((id, index) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={activeSection === id ? 'active' : ''}
+            aria-current={activeSection === id ? 'true' : undefined}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span className="nav-index">{String(index + 2).padStart(2, '0')}</span>
+            {t.nav[id]}
+          </a>
+        ))}
+      </nav>
+
       <main>
         <section className="hero" id="inicio">
           <div className="hero-copy reveal is-visible">
             <p className="eyebrow"><span>01</span> / {t.hero.eyebrow}</p>
+            <p className="hero-role">
+              <span aria-hidden="true">
+                <b className="hero-role-prompt">&gt;</b> {roleText}
+                <i className="hero-role-cursor" />
+              </span>
+              <span className="sr-only">{roles.join(' · ')}</span>
+            </p>
             <h1>
               {t.hero.title[0]}
               <br />

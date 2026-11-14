@@ -127,6 +127,7 @@ export const content = {
     ui: {
       home: 'Inicio portfolio de David',
       mainNav: 'Navegación principal',
+      primaryNav: 'Enlaces principales',
       theme: 'Cambiar tema',
       language: 'Ver en inglés',
       languageShort: 'EN',
@@ -146,6 +147,7 @@ export const content = {
     },
     hero: {
       eyebrow: 'administración de sistemas informáticos',
+      roles: ['Proceso de ser Administrador de Sistemas', 'Proceso de ser Hacker Ético'],
       title: ['Diseño sistemas', 'que resisten.'],
       text:
         'Soy David, estudiante de ASIR. Construyo infraestructuras claras, seguras y fáciles de mantener, desde la red hasta la automatización.',
@@ -321,6 +323,7 @@ export const content = {
     ui: {
       home: 'David’s portfolio home',
       mainNav: 'Main navigation',
+      primaryNav: 'Primary links',
       theme: 'Toggle theme',
       language: 'Ver en español',
       languageShort: 'ES',
@@ -340,6 +343,7 @@ export const content = {
     },
     hero: {
       eyebrow: 'network systems administration',
+      roles: ['Becoming a Systems Administrator', 'Becoming an Ethical Hacker'],
       title: ['I design systems', 'that endure.'],
       text:
         'I’m David, a Network Systems Administration (ASIR) student. I build clear, secure and maintainable infrastructure, from the network up to automation.',

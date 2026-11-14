@@ -237,13 +237,13 @@ function App() {
             <img
               className="profile-avatar"
               src={`${base}avatar-320.webp`}
-              srcSet={`${base}avatar-320.webp 320w, ${base}avatar.webp 640w`}
+              srcSet={`${base}avatar-320.webp 300w, ${base}avatar.webp 600w`}
               sizes="(max-width: 980px) 160px, 220px"
-              width={320}
-              height={320}
+              width={300}
+              height={402}
               loading="lazy"
               decoding="async"
-              alt={lang === 'es' ? 'Ilustración de David trabajando frente a sus monitores' : 'Illustration of David working at his monitors'}
+              alt={lang === 'es' ? 'Ilustración de David con sudadera negra' : 'Illustration of David in a black hoodie'}
             />
           </div>
 

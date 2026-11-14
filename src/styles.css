@@ -586,16 +586,12 @@ footer {
   width: 100%;
   max-width: 220px;
   height: auto;
-  aspect-ratio: 1;
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 14px 16px 0 rgba(16, 38, 49, 0.38), 0 24px 60px -24px rgba(98, 217, 223, 0.35);
+  margin-top: 14px;
+  filter: drop-shadow(0 18px 30px rgba(98, 217, 223, 0.22)) drop-shadow(0 0 1px rgba(98, 217, 223, 0.35));
 }
 
 :root[data-theme='light'] .profile-avatar {
-  box-shadow: 14px 16px 0 rgba(15, 138, 154, 0.12), 0 20px 50px -24px rgba(17, 32, 47, 0.3);
+  filter: drop-shadow(0 16px 26px rgba(17, 32, 47, 0.22));
 }
 
 .section-label {

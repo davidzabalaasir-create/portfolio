@@ -231,7 +231,21 @@ function App() {
         </section>
 
         <section className="profile section-grid" id="perfil">
-          <div className="section-label"><span>02</span><span>{t.profile.label}</span></div>
+          <div className="section-label profile-side">
+            <span>02</span>
+            <span>{t.profile.label}</span>
+            <img
+              className="profile-avatar"
+              src={`${base}avatar-320.webp`}
+              srcSet={`${base}avatar-320.webp 300w, ${base}avatar.webp 600w`}
+              sizes="(max-width: 980px) 160px, 220px"
+              width={300}
+              height={402}
+              loading="lazy"
+              decoding="async"
+              alt={lang === 'es' ? 'Ilustración de David con sudadera negra' : 'Illustration of David in a black hoodie'}
+            />
+          </div>
 
           <div className="profile-content reveal">
             <div>

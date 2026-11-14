@@ -583,8 +583,8 @@ footer {
 /* Ilustración de perfil en la columna izquierda */
 .profile-avatar {
   display: block;
-  width: 100%;
-  max-width: 220px;
+  width: calc(100% + 40px);
+  max-width: 260px;
   height: auto;
   margin-top: 14px;
   filter: drop-shadow(0 18px 30px rgba(98, 217, 223, 0.22)) drop-shadow(0 0 1px rgba(98, 217, 223, 0.35));
@@ -2147,7 +2147,8 @@ footer b {
 
   .profile-avatar {
     grid-column: 1 / -1;
-    max-width: 160px;
+    width: 100%;
+    max-width: 210px;
     margin-top: 8px;
   }
 

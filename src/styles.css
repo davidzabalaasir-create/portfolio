@@ -580,6 +580,24 @@ footer {
   align-self: start;
 }
 
+/* Ilustración de perfil en la columna izquierda */
+.profile-avatar {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 14px 16px 0 rgba(16, 38, 49, 0.38), 0 24px 60px -24px rgba(98, 217, 223, 0.35);
+}
+
+:root[data-theme='light'] .profile-avatar {
+  box-shadow: 14px 16px 0 rgba(15, 138, 154, 0.12), 0 20px 50px -24px rgba(17, 32, 47, 0.3);
+}
+
 .section-label {
   display: flex;
   flex-direction: column;
@@ -2123,6 +2141,18 @@ footer b {
   .section-label {
     position: static;
     flex-direction: row;
+  }
+
+  .profile-side {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+  }
+
+  .profile-avatar {
+    grid-column: 1 / -1;
+    max-width: 160px;
+    margin-top: 8px;
   }
 
   .project-list {

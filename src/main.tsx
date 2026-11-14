@@ -238,7 +238,7 @@ function App() {
               className="profile-avatar"
               src={`${base}avatar-320.webp`}
               srcSet={`${base}avatar-320.webp 300w, ${base}avatar.webp 600w`}
-              sizes="(max-width: 980px) 160px, 220px"
+              sizes="(max-width: 980px) 210px, 260px"
               width={300}
               height={402}
               loading="lazy"

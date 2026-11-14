@@ -186,6 +186,28 @@ function App() {
 
       <main>
         <section className="hero" id="inicio">
+          {/*
+            Fondo cinematográfico "Neon Grid" (AnimatedWebs).
+            Coloca el loop limpio en public/ como neon-grid.mp4 y su póster neon-grid.jpg.
+            Sin esos archivos el hero se ve negro (var(--bg)); al añadirlos, el vídeo aparece
+            atenuado bajo el overlay oscuro. Solo se muestra en tema oscuro y se oculta con
+            prefers-reduced-motion (ver styles.css: .hero-bg).
+          */}
+          <div className="hero-bg" aria-hidden="true">
+            <video
+              className="hero-bg-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster={`${base}neon-grid.jpg`}
+            >
+              <source src={`${base}neon-grid.mp4`} type="video/mp4" />
+            </video>
+            <div className="hero-bg-overlay" />
+          </div>
+
           <div className="hero-copy reveal is-visible">
             <p className="eyebrow"><span>01</span> / {t.hero.eyebrow}</p>
             <h1>
